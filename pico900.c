@@ -1,8 +1,14 @@
-// Elliott 900 emulator for Raspberry Pi Pico - Andrew Herbert - 03/04/2021
+// Elliott 900 emulator for Raspberry Pi Pico
+
+// Copyright (c) Andrew Herbert - 03/04/2021
+
+// MIT Licence.
 
 // Emulator for Elliott 900 Series computers.
 // Does not implement 'undefined' effects.
 // Has simplified handling of priority levels and initial orders.
+// Only supports paper tape input and output and teleprinter
+// peripherals.
 
 
 /**********************************************************/
@@ -42,30 +48,32 @@ typedef uint_fast64_t  UINT64;
 #define STORE_SIZE 8192u
 
 // GPIO pins
-#define NOPOWER_PIN  1
-#define ACK_PIN      2
+#define NOPOWER_PIN  0
+#define ACK_PIN      1 
+#define II_AUTO_PIN  2
+#define LOG_PIN      3
 #define RDREQ_PIN    4
 #define WRREQ_PIN    5
 #define TTYSEL_PIN   6
-#define RDR_1_PIN    9
-#define RDR_2_PIN   10
-#define RDR_4_PIN   11
-#define RDR_8_PIN   12
-#define RDR_16_PIN  14
-#define RDR_32_PIN  15
-#define RDR_64_PIN  16
-#define RDR_128_PIN 17
-#define PUN_1_PIN   35
-#define PUN_2_PIN   34
-#define PUN_4_PIN   32
-#define PUN_8_PIN   31
-#define PUN_16_PIN  29
-#define PUN_32_PIN  27
-#define PUN_64_PIN  26
+#define RDR_1_PIN    7
+#define RDR_2_PIN    8
+#define RDR_4_PIN    9
+#define RDR_8_PIN   10
+#define RDR_16_PIN  11
+#define RDR_32_PIN  12
+#define RDR_64_PIN  13
+#define RDR_128_PIN 14
+// GP15 spare
+#define PUN_1_PIN   16
+#define PUN_2_PIN   17
+#define PUN_4_PIN   18
+#define PUN_8_PIN   19
+#define PUN_16_PIN  20
+#define PUN_32_PIN  21
+#define PUN_64_PIN  22
 #define LED_PIN     25 // on board LED
-#define PUN_128_PIN
-#define II_AUTO_PIN 22
-
+#define PUN_128_PIN 26
+// GP27, GP28 spare
 
 
 // Useful constants
