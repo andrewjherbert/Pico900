@@ -1403,6 +1403,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/include/boot_stage2/config.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: generated/pico_base/pico/config_autogen.h

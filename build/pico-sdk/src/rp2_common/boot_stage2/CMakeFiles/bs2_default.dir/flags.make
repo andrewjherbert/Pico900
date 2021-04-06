@@ -6,5 +6,5 @@ ASM_FLAGS = -march=armv6-m -mcpu=cortex-m0plus -mthumb -Og -g
 
 ASM_DEFINES = -DPICO_BOARD=\"pico\" -DPICO_BUILD=1 -DPICO_NO_HARDWARE=0 -DPICO_ON_DEVICE=1
 
-ASM_INCLUDES = -I/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude -I/home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include -I/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_base/include -I/home/ajh2/pico/pico-sdk/src/common/pico_base/include -I/home/ajh2/pico/pico900/build/generated/pico_base -I/home/ajh2/pico/pico-sdk/src/boards/include -I/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/include 
+ASM_INCLUDES = -I/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude -I/home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include -I/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_base/include -I/home/ajh2/pico/pico-sdk/src/common/pico_base/include -I/home/ajh2/pico/pico900/build/generated/pico_base -I/home/ajh2/pico/pico-sdk/src/boards/include -I/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/include -I/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/include 
 

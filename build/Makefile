@@ -137,19 +137,6 @@ ELF2UF2Build/fast:
 .PHONY : ELF2UF2Build/fast
 
 #=============================================================================
-# Target rules for targets named bs2_default_padded_checksummed_asm
-
-# Build rule for target.
-bs2_default_padded_checksummed_asm: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bs2_default_padded_checksummed_asm
-.PHONY : bs2_default_padded_checksummed_asm
-
-# fast build rule for target.
-bs2_default_padded_checksummed_asm/fast:
-	$(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
-.PHONY : bs2_default_padded_checksummed_asm/fast
-
-#=============================================================================
 # Target rules for targets named bs2_default
 
 # Build rule for target.
@@ -174,6 +161,19 @@ bs2_default_bin: cmake_check_build_system
 bs2_default_bin/fast:
 	$(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build
 .PHONY : bs2_default_bin/fast
+
+#=============================================================================
+# Target rules for targets named bs2_default_padded_checksummed_asm
+
+# Build rule for target.
+bs2_default_padded_checksummed_asm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bs2_default_padded_checksummed_asm
+.PHONY : bs2_default_padded_checksummed_asm
+
+# fast build rule for target.
+bs2_default_padded_checksummed_asm/fast:
+	$(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
+.PHONY : bs2_default_padded_checksummed_asm/fast
 
 home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 
@@ -1742,9 +1742,9 @@ help:
 	@echo "... pico900"
 	@echo "... rebuild_cache"
 	@echo "... ELF2UF2Build"
-	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... bs2_default"
 	@echo "... bs2_default_bin"
+	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
