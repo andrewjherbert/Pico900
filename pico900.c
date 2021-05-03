@@ -1,6 +1,6 @@
 // Elliott 900 emulator for Raspberry Pi Pico
 
-// Copyright (c) Andrew Herbert - 05/04/2021
+// Copyright (c) Andrew Herbert - 03/04/2021
 
 // MIT Licence.
 
@@ -75,7 +75,7 @@ typedef uint_fast64_t  UINT64;
 #define PUN_16_PIN  12
 #define PUN_32_PIN  13
 #define PUN_64_PIN  14 
-#define PUN_128_PIN 15 // Pico setsto  msb of punch output
+#define PUN_128_PIN 15 // Pico sets to msb of punch output
 
 #define PUN_MASK    0177400 // PINs to bit mask
 
@@ -87,7 +87,7 @@ typedef uint_fast64_t  UINT64;
 #define FAST_PIN    20 // set HIGH to enable running at full speed
 #define RDRREQ_PIN  21 // Pico sets HIGH to request reader input and awaits ACK
 #define PUNREQ_PIN  22 // Pico sets HIGH to request punch output and awiats ACK
-#define TTYSEL_PIN  23 // Pico sets HIGH to select teleprinter, LOW for paper tape
+#define TTYSEL_PIN  26 // Pico sets HIGH to select teleprinter, LOW for paper tape
 // GPIO24 spare
 #define LED_PIN     25 // onboard LED
 // GPIO26 spare
@@ -481,7 +481,7 @@ void set_up_gpios() {
 
   // Set pull up / downs
   for ( UINT8 i =  0 ; i < IN_PINS; i++ )
-    {
+    {v
       UINT8 pin = in_pins[i];
       if  ( pin != NOPOWER_PIN )
 	gpio_pull_down(pin);
