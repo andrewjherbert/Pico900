@@ -1,5 +1,4 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-
 // Copyright (c) Andrew Herbert - 28/04/2021
 
 // MIT Licence.
@@ -162,7 +161,7 @@ typedef uint_fast64_t  UINT64;
 #define PUN_16_PIN  12
 #define PUN_32_PIN  13
 #define PUN_64_PIN  14 
-#define PUN_128_PIN 15 // Set msb of punch output
+#define PUN_128_PIN 15 // Pico sets to msb of punch output
 
 #define PUN_PINS_MASK 0177400 // PINs to bit mask
 
