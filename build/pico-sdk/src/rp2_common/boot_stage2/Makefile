@@ -155,14 +155,14 @@ bs2_default_padded_checksummed_asm/fast:
 	cd /home/ajh2/pico/pico900/build && $(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
 .PHONY : bs2_default_padded_checksummed_asm/fast
 
-boot2_w25q080.obj: boot2_w25q080.S.obj
+compile_time_choice.obj: compile_time_choice.S.obj
 
-.PHONY : boot2_w25q080.obj
+.PHONY : compile_time_choice.obj
 
 # target to build an object file
-boot2_w25q080.S.obj:
-	cd /home/ajh2/pico/pico900/build && $(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/boot2_w25q080.S.obj
-.PHONY : boot2_w25q080.S.obj
+compile_time_choice.S.obj:
+	cd /home/ajh2/pico/pico900/build && $(MAKE) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+.PHONY : compile_time_choice.S.obj
 
 # Help Target
 help:
@@ -175,7 +175,7 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... edit_cache"
-	@echo "... boot2_w25q080.obj"
+	@echo "... compile_time_choice.obj"
 .PHONY : help
 
 
