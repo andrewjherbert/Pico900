@@ -20,8 +20,6 @@ hardware/platform_defs.h
 
 /home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h
 
-/home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_qspi.h
-
 /home/ajh2/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/ssi.h
 
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude/boot2_helpers/exit_from_boot2.S
@@ -34,21 +32,53 @@ boot2_helpers/wait_ssi_ready.S
 
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude/boot2_helpers/wait_ssi_ready.S
 
-/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_w25q080.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S
 pico/asm_helper.S
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/pico/asm_helper.S
 hardware/regs/addressmap.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/addressmap.h
 hardware/regs/ssi.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/ssi.h
-hardware/regs/pads_qspi.h
-/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/pads_qspi.h
+boot2_helpers/exit_from_boot2.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_helpers/exit_from_boot2.S
+
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_is25lp080.S
+pico/asm_helper.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/pico/asm_helper.S
+hardware/regs/addressmap.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/addressmap.h
+hardware/regs/ssi.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/ssi.h
 boot2_helpers/exit_from_boot2.S
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_helpers/exit_from_boot2.S
 boot2_helpers/wait_ssi_ready.S
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_helpers/wait_ssi_ready.S
 boot2_helpers/read_flash_sreg.S
 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_helpers/read_flash_sreg.S
+
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_w25x10cl.S
+pico/asm_helper.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/pico/asm_helper.S
+hardware/regs/addressmap.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/addressmap.h
+hardware/regs/ssi.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/hardware/regs/ssi.h
+boot2_helpers/exit_from_boot2.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_helpers/exit_from_boot2.S
+
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S
+boot_stage2/config.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot_stage2/config.h
+boot2_is25lp080.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_is25lp080.S
+boot2_w28q080.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_w28q080.S
+boot2_w25x10cl.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_w25x10cl.S
+boot2_generic_03h.S
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S
+
+/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/include/boot_stage2/config.h
 
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/asm_helper.S
 hardware/platform_defs.h

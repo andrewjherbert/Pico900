@@ -1,7 +1,7 @@
 The target system is: PICO -  - cortex-m0plus
 The host system is: Linux - 5.10.17-v7l+ - armv7l
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/arm-none-eabi-gcc 
+Compiler: /usr/bin/arm-none-eabi-gcc-7.3.1 
 Build flags: 
 Id flags: -c 
 

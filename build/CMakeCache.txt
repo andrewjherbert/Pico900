@@ -38,7 +38,7 @@ CMAKE_ASM_COMPILER_AR:FILEPATH=/usr/bin/arm-none-eabi-gcc-ar
 CMAKE_ASM_COMPILER_RANLIB:FILEPATH=/usr/bin/arm-none-eabi-gcc-ranlib
 
 //Flags used by the ASM compiler during all build types.
-CMAKE_ASM_FLAGS:STRING=-march=armv6-m -mcpu=cortex-m0plus -mthumb
+CMAKE_ASM_FLAGS:STRING=-mcpu=cortex-m0plus -mthumb
 
 //Flags used by the ASM compiler during DEBUG builds.
 CMAKE_ASM_FLAGS_DEBUG:STRING=-Og -g
@@ -52,9 +52,9 @@ CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the ASM compiler during RELWITHDEBINFO builds.
 CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Choose the type of build, options are: None Debug Release RelWithDebInfo
-// MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: 'Debug', 'Release', 'MinSizeRel',
+// 'RelWithDebInfo'.
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -71,7 +71,7 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/arm-none-eabi-gcc-ar
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/arm-none-eabi-gcc-ranlib
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=-march=armv6-m -mcpu=cortex-m0plus -mthumb
+CMAKE_CXX_FLAGS:STRING=-mcpu=cortex-m0plus -mthumb
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-Og -g
@@ -85,8 +85,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/arm-none-eabi-gcc
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/arm-none-eabi-gcc-7.3.1
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -97,7 +97,7 @@ CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/arm-none-eabi-gcc-ar
 CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/arm-none-eabi-gcc-ranlib
 
 //Flags used by the C compiler during all build types.
-CMAKE_C_FLAGS:STRING=-march=armv6-m -mcpu=cortex-m0plus -mthumb
+CMAKE_C_FLAGS:STRING=-mcpu=cortex-m0plus -mthumb
 
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-Og -g
@@ -266,8 +266,11 @@ PICO_COMPILER_CXX:FILEPATH=/usr/bin/arm-none-eabi-g++
 //Default binaries to Copy code to RAM when booting from flash
 PICO_COPY_TO_RAM:BOOL=OFF
 
+//boot_stage2 short name
+PICO_DEFAULT_BOOT_STAGE2:STRING=compile_time_choice
+
 //boot_stage2 source file
-PICO_DEFAULT_BOOT_STAGE2_FILE:STRING=/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2/boot2_w25q080.S
+PICO_DEFAULT_BOOT_STAGE2_FILE:STRING=
 
 //Build debug builds with -O0
 PICO_DEOPTIMIZED_DEBUG:BOOL=OFF
@@ -334,6 +337,8 @@ CMAKE_ASM_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_ASM_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ASM_FLAGS_RELWITHDEBINFO
 CMAKE_ASM_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//STRINGS property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Debug;Release;MinSizeRel;RelWithDebInfo
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/ajh2/pico/pico900/build
 //Major version of cmake used to create the current loaded cache
