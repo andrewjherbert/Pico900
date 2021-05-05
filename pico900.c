@@ -270,7 +270,7 @@ void punch_test();
 
 int main() {
 
-  int errors = 0;
+  static UINT32 restarts = 0;
 
   bi_decl(bi_program_description("Elliott 920M Emulator by Andrew Herbert"));
 
@@ -289,7 +289,7 @@ int main() {
 
   if ( logging_enabled )
     {
-      puts("\n\n\nStarting");
+      puts("\n\n\nStarting (%u)", ++restarts);
       if ( fast_enabled )
 	puts("Fast mode");
       else
