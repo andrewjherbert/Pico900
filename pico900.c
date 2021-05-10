@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 05/05/2021
+// Copyright (c) Andrew Herbert - 10/05/2021
 
 // MIT Licence.
 
@@ -289,7 +289,7 @@ int main() {
 
   if ( logging_enabled )
     {
-      puts("\n\n\nStarting (%u)", ++restarts);
+      printf("\n\n\nStarting (%u)\n", ++restarts);
       if ( fast_enabled )
 	puts("Fast mode");
       else
