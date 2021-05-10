@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 28/04/2021
+// Copyright (c) Andrew Herbert - 05/05/2021
 
 // MIT Licence.
 
@@ -174,7 +174,6 @@ typedef uint_fast64_t  UINT64;
 #define RDRREQ_PIN  21 // Pico sets HIGH to request reader input and awaits ACK
 #define PUNREQ_PIN  22 // Pico sets HIGH to request punch output and awiats ACK
 #define TTYSEL_PIN  26 // Pico sets HIGH to select teleprinter, LOW for paper tape
-// GPIO24 spare
 #define LED_PIN     25 // onboard LED
 // GPIO26 spare
 // GPIO27 spare
@@ -271,7 +270,7 @@ void punch_test();
 
 int main() {
 
-  int errors = 0;
+  static UINT32 restarts = 0;
 
   bi_decl(bi_program_description("Elliott 920M Emulator by Andrew Herbert"));
 
@@ -290,7 +289,7 @@ int main() {
 
   if ( logging_enabled )
     {
-      puts("\n\n\nStarting");
+      puts("\n\n\nStarting (%u)", ++restarts);
       if ( fast_enabled )
 	puts("Fast mode");
       else
