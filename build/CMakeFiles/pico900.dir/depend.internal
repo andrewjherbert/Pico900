@@ -1716,6 +1716,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib
  generated/pico_base/pico/config_autogen.h
  generated/pico_base/pico/version.h
 CMakeFiles/pico900.dir/pico900.c.obj
+ /home/ajh2/pico/Pico900/pico900.c
  /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio.h
  /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.h
  /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/bth/bth_device.h
@@ -1790,7 +1791,6 @@ CMakeFiles/pico900.dir/pico900.c.obj
  /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h
  /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
  /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h
- /home/ajh2/pico/pico900/pico900.c
  generated/pico_base/pico/config_autogen.h
  generated/pico_base/pico/version.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj

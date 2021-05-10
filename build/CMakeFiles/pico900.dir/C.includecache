@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/ajh2/pico/Pico900/pico900.c
+stdio.h
+-
+pico/stdlib.h
+-
+hardware/gpio.h
+-
+pico/binary_info.h
+-
+tusb.h
+-
+setjmp.h
+-
+
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/common/tusb_common.h
@@ -509,20 +523,6 @@ pico/stdio.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h
 pico/stdio_usb.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
-
-/home/ajh2/pico/pico900/pico900.c
-stdio.h
--
-pico/stdlib.h
--
-hardware/gpio.h
--
-pico/binary_info.h
--
-tusb.h
--
-setjmp.h
--
 
 generated/pico_base/pico/config_autogen.h
 /home/ajh2/pico/pico-sdk/src/boards/include/boards/pico.h

@@ -227,6 +227,7 @@ UINT8 autostart_enabled = 0; // 0 = autostart after reset, 1 = run initial
 
 static jmp_buf jbuf;  // used by setjmp in main
 
+
 /**********************************************************/
 /*                         FUNCTIONS                      */
 /**********************************************************/
@@ -275,13 +276,20 @@ int main() {
   bi_decl(bi_program_description("Elliott 920M Emulator by Andrew Herbert"));
 
   stdio_init_all(); // initialise stdio
-  set_up_gpios(); // configure interface to outside world
-    
-  while ( !tud_cdc_connected() ) sleep_ms(100); // wait for usb to wake up
+  set_up_gpios();   // configure interface to outside world
 
   // long jump to here resets simulation
   setjmp(jbuf);
-
+  
+   // 4 blinks to signal waking up
+  for ( UINT8 i = 1 ; i <= 4 ; i++ )
+    {
+      led_on();
+      sleep_ms(250);
+      led_off();
+      sleep_ms(250);
+    }
+ 
   // set local flags based on external inputs
   logging_enabled = logging();     // print logging messages to usb?
   fast_enabled    = fast();        // run at maximum speed?
@@ -289,6 +297,12 @@ int main() {
 
   if ( logging_enabled )
     {
+      while ( !tud_cdc_connected() ) // wait for usb to wake up
+	{
+	  led_on();
+	  sleep_ms(1000);
+	  led_off();
+	}
       printf("\n\n\nStarting (%u)\n", ++restarts);
       if ( fast_enabled )
 	puts("Fast mode");
@@ -298,15 +312,6 @@ int main() {
 	puts("Autostart");
       else
 	puts("Initial instructions");
-    }
-
-  // 4 blinks to signal waking up
-  for ( UINT8 i = 1 ; i <= 4 ; i++ )
-    {
-      led_on();
-      sleep_ms(250);
-      led_off();
-      sleep_ms(250);
     }
 
   // wait for reset sequence from host

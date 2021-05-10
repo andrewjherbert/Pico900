@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "/usr/bin/arm-none-eabi-gcc-7.3.1")
+set(CMAKE_C_COMPILER "/usr/bin/arm-none-eabi-gcc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "7.3.1")

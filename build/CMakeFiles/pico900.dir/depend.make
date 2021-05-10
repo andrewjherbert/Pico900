@@ -1715,6 +1715,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/pico900.dir/pico900.c.obj: ../pico900.c
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/bth/bth_device.h
@@ -1789,7 +1790,6 @@ CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pi
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h
-CMakeFiles/pico900.dir/pico900.c.obj: ../pico900.c
 CMakeFiles/pico900.dir/pico900.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/pico900.c.obj: generated/pico_base/pico/version.h
 
