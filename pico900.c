@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 10/05/2021
+// Copyright (c) Andrew Herbert - 21/05/2021
 
 // MIT Licence.
 
@@ -24,7 +24,7 @@
 // in a register or store location is to check if it's bit 18
 // is set.  Addresses are generally hed as unsigned 16 bit
 // quantities and characters as unsigned 8 bit quantities, but on
-// the Pico both are implmented as 32 bit quantities so there is
+// the Pico both are implemented as 32 bit quantities so there is
 // no saving of memory, just a reminder of the size of these types
 // of data.
 
@@ -137,6 +137,9 @@ typedef uint_fast64_t  UINT64;
 // Booleans
 #define TRUE  1
 #define FALSE 0
+
+#define TAPE  0  // select paper tape reader / punch
+#define TTY   1  // select teletype
 
 // Store size
 #define STORE_SIZE 8192
@@ -259,8 +262,7 @@ static inline void   wait_for_no_ack();            // wait for ACK LOW
 static inline UINT8  get_pts_ch(UINT8 tty);        // read from paper tape station
 static inline void   put_pts_ch(UINT8 ch, UINT8 tty);
                                                    // punch to paper tape station
-
-
+void loopback_test();
 void reader_test();
 void punch_test();
 
@@ -289,11 +291,13 @@ int main() {
       led_off();
       sleep_ms(250);
     }
- 
+
+  sleep_ms(1000);
+
   // set local flags based on external inputs
-  logging_enabled = logging();     // print logging messages to usb?
-  fast_enabled    = fast();        // run at maximum speed?
-  autostart_enabled = autostart(); // autostart or initial orders
+  logging_enabled   = logging();     // print logging messages to usb?
+  fast_enabled      = fast();        // run at maximum speed?
+  autostart_enabled = autostart();   // autostart or initial orders
 
   if ( logging_enabled )
     {
@@ -303,7 +307,7 @@ int main() {
 	  sleep_ms(1000);
 	  led_off();
 	}
-      printf("\n\n\nStarting (%u)\n", ++restarts);
+      printf("\n\n\nPico900 Starting (%u)\n", ++restarts);
       if ( fast_enabled )
 	puts("Fast mode");
       else
@@ -314,13 +318,19 @@ int main() {
 	puts("Initial instructions");
     }
 
+  // local tests
+  loopback_test();
+  longjmp(jbuf, 0);
+
   // wait for reset sequence from host
+  if ( logging ) puts("Waiting for reset");
   wait_for_power_off();
   wait_for_power_on();
+  if ( logging ) puts("Reset received");
 
-  // run tests
+  // remote tests
   reader_test();
-  //punch_test();
+  // punch_test();
     
   longjmp(jbuf, 0);
   
@@ -344,11 +354,10 @@ void punch_test()
   puts("Punch test starting");
   for ( UINT32 c = 0 ; c < 10000 ; c++ )
     {
-      put_pts_ch(c%256, 0);
+      put_pts_ch(c%256, TAPE);
     }
   puts("Punch tests complete");
 }
-
 
 void reader_test()
 {
@@ -358,7 +367,7 @@ void reader_test()
   for ( UINT32 c = 0 ; c < 1000 ; c++ )
     {
       //printf("Cycle %u\n", c);
-      int ch = get_pts_ch(0);
+      int ch = get_pts_ch(TAPE);
       if  (ch != (c%256) ) 
 	{
 	  printf("Failed after %d got %d, expected %d\n",c, ch, c%256);
@@ -374,6 +383,43 @@ void reader_test()
   puts("Reader test complete");
 }
 
+void loopback_test()
+{
+  UINT32 cycles = 50000, errors, ch;
+  absolute_time_t start;
+  UINT64 time_in_us;
+  
+  puts("emu900 loopback test");
+
+  start = get_absolute_time();
+  for ( UINT32 i = 0 ; i < cycles ; i++ )
+    {
+      errors = 0;
+      for ( UINT32 j = 0 ; j < 256 ; j++ )
+	{
+	  //
+	  gpio_put_masked(PUN_PINS_MASK, j<<PUN_1_PIN); // write 8 bits
+	  busy_wait_us(0);
+	  ch = (gpio_get_all() >> RDR_1_PIN) & 255; // read 8 bits
+	  if ( ch != j )
+	    {
+	      printf("Cycle %6d,%3d: sent %3d (%4o), got %3d (%4o)\n",
+		     i, j, j, j, ch, ch);
+	      if ( ++errors > 10 )
+		{
+		  sleep_ms(10000);
+		  puts("Giving up after errors");
+		  return;
+		}
+	    }
+	}
+      }
+  time_in_us = absolute_time_diff_us(start, get_absolute_time());
+  
+  printf("Loopback test complete after %d cycles, %.1f uS per cycle\n",
+	 cycles, ((float) time_in_us) / ((float) (cycles * 256)));
+}
+	    
 
 /**********************************************************/
 /*                         EMULATION                      */
@@ -400,7 +446,8 @@ void emulate (const UINT32 start, UINT8 fast) {
     {
       if ( no_power() )
 	{
-	  if ( logging_enabled ) puts("NOPOWER HIGH detected at instruction fetch");
+	  if ( logging_enabled ) 
+            puts("NOPOWER HIGH detected at instruction fetch");
 	  longjmp(jbuf, 0); // reset signalled
 	}
 
@@ -572,24 +619,24 @@ void emulate (const UINT32 start, UINT8 fast) {
 
 		    case 2048: // read from tape reader
 		      { 
-	                UINT8 ch = get_pts_ch(1); 
+	                UINT8 ch = get_pts_ch(TAPE); 
 	                a_reg = ((a_reg << 7) | ch) & MASK_18;
 	                break;
 	               }
 
 	            case 2052: // read from teletype
 		      {
-	                UINT8 ch = get_pts_ch(1);
+	                UINT8 ch = get_pts_ch(TTY);
 	                a_reg = ((a_reg << 7) | ch) & MASK_18;
 	                break;
 	              }
 
 	            case 6144: // write to paper tape punch 
-	              put_pts_ch((UINT8)(a_reg & 255), 0);
+	              put_pts_ch((UINT8)(a_reg & 255), TAPE);
 	              break;
 
 	            case 6148: // write to teletype
-	              put_pts_ch((UINT8)(a_reg & 255), 1);
+	              put_pts_ch((UINT8)(a_reg & 255), TTY);
 	              break;	      
 	  
 	            case 7168:  // Level terminate
@@ -627,7 +674,6 @@ static inline void check_address(const UINT16 m)
 
 static inline UINT8 get_pts_ch(const UINT8 tty) {
   static UINT8 ch;
-  //printf("Cycle %u no ack outstanding, issuing read request\n", cycle);
   if ( tty == 1 ) gpio_put(TTYSEL_PIN, 1);
   gpio_put(RDRREQ_PIN, 1);
   wait_for_ack();
@@ -699,14 +745,22 @@ static inline void set_up_gpios()
   for ( UINT8 i = 0; i < IN_PINS;  i++ ) in_pins_mask  |= (1 << in_pins[i]);
   for ( UINT8 i = 0; i < OUT_PINS; i++ ) out_pins_mask |= (1 << out_pins[i]);
   // initialize GPIOs
+  /* for ( UINT8 i = 0; i < IN_PINS;  i++ ) */
+  /*   { */
+  /*     gpio_init(in_pins[i]); */
+  /*     gpio_set_dir(in_pins[i], FALSE); */
+  /*   } */
+  /* for ( UINT8 i = 0; i < OUT_PINS; i++ ) */
+  /*   { */
+  /*     gpio_init(out_pins[i]); */
+  /*     gpio_set_dir(out_pins[i], TRUE); */
+  /*   } */
   gpio_init_mask(in_pins_mask | out_pins_mask);
   // set up GPIO directions
   gpio_set_dir_masked(in_pins_mask | out_pins_mask,
-		      out_pins_mask); 
+  		      out_pins_mask); 
   // set all outputs 0
   gpio_clr_mask(out_pins_mask);
-  // pull up NOPOWER
-  gpio_pull_up(NOPOWER_PIN);
 }
 
 /* LED blinking */
