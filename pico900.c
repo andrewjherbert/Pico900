@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 21/05/2021
+// Copyright (c) Andrew Herbert - 08/06/2021
 
 // MIT Licence.
 
@@ -32,14 +32,14 @@
 // using GPIO pins.  The pin numbers are listed below.  The use 
 // of eachpin is as follows:
 //
-// RDRReq_PIN, high signals a reader request.  The paper tape
+// RDRREQ_PIN, high signals a reader request.  The paper tape
 // station is expected to load 8 bits of data on pins RDR_1_PIN
 // (lsb) to  RDR_128_PIN (msb) and then raise ACK-PIN high for
 // approximately 5uS to indicate the input data is ready. Once
 // the computer has read in the data it lowers RDRReq-PIN to
 // signal transfer complete.  
 //
-// PUNReq_PIN, high signals a punch request. The paper tape
+// PUNREQ_PIN, high signals a punch request. The paper tape
 // station is expected to laod 8 bits of data from pins PUN_1_PIN
 // (lsb) to PUN_128_PIN (msb) and then raise ACK_PIN high for
 // approximately 5uS to indicate the output data have been copied.
@@ -207,6 +207,8 @@ typedef uint_fast64_t  UINT64;
 #define EMULATION_14_FAIL   4
 #define EMULATION_15_FAIL   5
 
+#define time_out 200000000 //  about 10s
+
 
 /**********************************************************/
 /*                         GLOBALS                        */
@@ -222,13 +224,15 @@ const UINT8 out_pins[OUT_PINS] = { RDRREQ_PIN, PUNREQ_PIN, TTYSEL_PIN, PUN_1_PIN
 				   PUN_2_PIN, PUN_4_PIN, PUN_8_PIN, PUN_16_PIN,
 				   PUN_32_PIN, PUN_64_PIN, PUN_128_PIN, LED_PIN };
 
-UINT8 logging_enabled   = 1; // 1 = enable logging, 0 = disable logging to usb
+UINT8 logging_enabled   = 0; // 1 = enable logging, 0 = disable logging to usb
+                             // must default to 0 so no logging occurs until
+                             // LOG_PIN is sensed in main()
 UINT8 fast_enabled      = 0; // 1 = run at fastest speed, 0 = run at simulated
                              // 920M speed
 UINT8 autostart_enabled = 0; // 0 = autostart after reset, 1 = run initial
                              // instructions after reset
 
-static jmp_buf jbuf;  // used by setjmp in main
+static jmp_buf jbuf;        // used by setjmp in main
 
 
 /**********************************************************/
@@ -236,8 +240,7 @@ static jmp_buf jbuf;  // used by setjmp in main
 /**********************************************************/
 
 
-void                 emulate(const UINT16 start, UINT8 fast);
-                                                   // run emulation from start
+void                 emulate(const UINT16 start);  // run emulation from start
 static inline void   check_address(const UINT16 add);
                                                    // check address is within bounds 
 static inline void   load_initial_instructions();  // load initial orders
@@ -262,9 +265,10 @@ static inline void   wait_for_no_ack();            // wait for ACK LOW
 static inline UINT8  get_pts_ch(UINT8 tty);        // read from paper tape station
 static inline void   put_pts_ch(UINT8 ch, UINT8 tty);
                                                    // punch to paper tape station
-void loopback_test();
-void reader_test();
-void punch_test();
+
+static inline void signals();                      // for  diagnostic use
+static void reader_test();                         
+static void punch_test();
 
 
 /**********************************************************/
@@ -281,7 +285,12 @@ int main() {
   set_up_gpios();   // configure interface to outside world
 
   // long jump to here resets simulation
-  setjmp(jbuf);
+  if ( setjmp(jbuf) ) // test if a longjmp occurred
+    if ( logging_enabled )
+      {
+	puts("Pico900 Halted after error - press reset to restart");
+	while ( TRUE ) sleep_ms(1000);
+      }
   
    // 4 blinks to signal waking up
   for ( UINT8 i = 1 ; i <= 4 ; i++ )
@@ -317,107 +326,66 @@ int main() {
       else
 	puts("Initial instructions");
     }
-
-  // local tests
-  loopback_test();
-  longjmp(jbuf, 0);
-
-  // wait for reset sequence from host
-  if ( logging ) puts("Waiting for reset");
-  wait_for_power_off();
-  wait_for_power_on();
-  if ( logging ) puts("Reset received");
-
-  // remote tests
-  reader_test();
-  // punch_test();
-    
-  longjmp(jbuf, 0);
-  
+   
   while ( TRUE ) // run emulation for ever
   {
-    if ( logging_enabled ) printf("\n\n\n\n\nPICO900 starting\n");
-    wait_for_power_on(); 
+    if ( logging_enabled ) puts("Waiting for power ok (-NOPOWER)");
+    wait_for_power_on();
+    if ( logging_enabled ) puts("Power ok, starting emulation");
     led_on(); // set LED to indicate running
+
+    reader_test();
+    
     load_initial_instructions(); 
-    emulate(8181, fast_enabled); // run emulation starting at location 8181
+    emulate(8181); // run emulation starting at location 8181
     // will only end up here on a failure or reset, in either case, restart
   }
 }
 
-/* The following three test routines are only for use during
+/* The following  test routines are only for use during
 the development phase of pico900.  They will not be used in the operational
 system */
 
 void punch_test()
 {
-  puts("Punch test starting");
-  for ( UINT32 c = 0 ; c < 10000 ; c++ )
+  if ( logging_enabled )
+    puts("Pico900 punch test starting");
+  else
     {
-      put_pts_ch(c%256, TAPE);
+      puts("No logging - stopped");
+      return;
     }
-  puts("Punch tests complete");
+  for ( UINT32 c = 0 ; ; c++ )
+    {
+      printf("Cycle %6d\n", c);
+      put_pts_ch(c%256, TAPE);
+      sleep_ms(10000);
+    }
+  puts("Pico900 punch tests complete");
 }
 
 void reader_test()
 {
   UINT8 errors = 0;
-  puts("Reader test starting");
-  // simple test loop emulating read
-  for ( UINT32 c = 0 ; c < 1000 ; c++ )
+  if ( logging_enabled )
+    puts("Pico900 reader test starting");
+  else
     {
-      //printf("Cycle %u\n", c);
+      puts("Reader test - no logging - stopped");
+      return;
+    }
+  // simple test loop emulating read
+  for ( UINT32 c = 0 ; ; c++ )
+    {
+      if ( c % 1000 == 0 ) printf("Cycle %u\n", c);
       int ch = get_pts_ch(TAPE);
       if  (ch != (c%256) ) 
-	{
-	  printf("Failed after %d got %d, expected %d\n",c, ch, c%256);
-          c++;
-	  if ( ++errors > 10 )
-	    {
-	      puts("Giving up");
-	      longjmp(jbuf, 0);
-	    }
-	 }
-      sleep_us(5);
+       	{ 
+       	  printf("Failed after %d got %d, expected %d\n",c, ch, c%256); 
+       	  longjmp(jbuf, 0);
+	} 
     }
-  puts("Reader test complete");
-}
-
-void loopback_test()
-{
-  UINT32 cycles = 50000, errors, ch;
-  absolute_time_t start;
-  UINT64 time_in_us;
-  
-  puts("emu900 loopback test");
-
-  start = get_absolute_time();
-  for ( UINT32 i = 0 ; i < cycles ; i++ )
-    {
-      errors = 0;
-      for ( UINT32 j = 0 ; j < 256 ; j++ )
-	{
-	  //
-	  gpio_put_masked(PUN_PINS_MASK, j<<PUN_1_PIN); // write 8 bits
-	  busy_wait_us(0);
-	  ch = (gpio_get_all() >> RDR_1_PIN) & 255; // read 8 bits
-	  if ( ch != j )
-	    {
-	      printf("Cycle %6d,%3d: sent %3d (%4o), got %3d (%4o)\n",
-		     i, j, j, j, ch, ch);
-	      if ( ++errors > 10 )
-		{
-		  sleep_ms(10000);
-		  puts("Giving up after errors");
-		  return;
-		}
-	    }
-	}
-      }
-  time_in_us = absolute_time_diff_us(start, get_absolute_time());
-  
-  printf("Loopback test complete after %d cycles, %.1f uS per cycle\n",
-	 cycles, ((float) time_in_us) / ((float) (cycles * 256)));
+  puts("Pico900 reader test complete");
 }
 	    
 
@@ -427,7 +395,7 @@ void loopback_test()
 
 /* 900 series emulator */
 
-void emulate (const UINT32 start, UINT8 fast) {
+void emulate (const UINT32 start) {
 
   static UINT32 a_reg  = 0;
   static UINT32 q_reg  = 0;
@@ -451,7 +419,7 @@ void emulate (const UINT32 start, UINT8 fast) {
 	  longjmp(jbuf, 0); // reset signalled
 	}
 
-      if ( !fast ) sleep_us(11); // run at roughly 920M speed
+      if ( !fast_enabled ) sleep_us(11); // run at roughly 920M speed
 
       // increment SCR
       last_scr = store[sc_reg]++; // remember SCR
@@ -674,14 +642,18 @@ static inline void check_address(const UINT16 m)
 
 static inline UINT8 get_pts_ch(const UINT8 tty) {
   static UINT8 ch;
+  if ( ack() == 1 )
+    {
+      if ( logging_enabled ) puts("ACK found at start of get_pts_ch");
+      longjmp(jbuf, 0);
+    }
   if ( tty == 1 ) gpio_put(TTYSEL_PIN, 1);
   gpio_put(RDRREQ_PIN, 1);
   wait_for_ack();
-  ch = (gpio_get_all() & RDR_PINS_MASK) >> RDR_1_PIN; // read 8 bits
+    ch = (gpio_get_all() & RDR_PINS_MASK) >> RDR_1_PIN; // read 8 bits
   wait_for_no_ack();
-  if ( tty ) gpio_put(TTYSEL_PIN, 0);
+    if ( tty ) gpio_put(TTYSEL_PIN, 0);
   gpio_put(RDRREQ_PIN, 0);
-  sleep_us(2);
   return ch;
 }
 
@@ -689,21 +661,27 @@ static inline UINT8 get_pts_ch(const UINT8 tty) {
 
 static inline void put_pts_ch(const UINT8 ch, const UINT8 tty)
 {
-  printf("punching %d\n",
-	 ((ch << PUN_1_PIN) & PUN_PINS_MASK) >> PUN_1_PIN);
+  if ( ack() == 1 )
+    {
+      if (logging_enabled ) puts("ACK found at start of put_pts_ch");
+      longjmp(jbuf, 0);
+    }
   gpio_put_masked(PUN_PINS_MASK, ch << PUN_1_PIN); // write 8 bits
   if ( tty == 1 ) gpio_put(TTYSEL_PIN, 1);
   gpio_put(PUNREQ_PIN, 1); // request write
   wait_for_ack();
+  if ( ack() != 1 ) puts("Missed ACK");
   wait_for_no_ack();
+  if ( ack() != 0 ) puts("Missed ACK reset");
   if ( tty == 1 ) gpio_put(TTYSEL_PIN, 0);
   gpio_put(PUNREQ_PIN, 0);
-  sleep_us(2);
 }
+
 
 /**********************************************************/
 /*               INITIAL INSTRUCTIONS                     */
 /**********************************************************/
+
 
 /* Load initial instructions into sstore */
 
@@ -745,22 +723,14 @@ static inline void set_up_gpios()
   for ( UINT8 i = 0; i < IN_PINS;  i++ ) in_pins_mask  |= (1 << in_pins[i]);
   for ( UINT8 i = 0; i < OUT_PINS; i++ ) out_pins_mask |= (1 << out_pins[i]);
   // initialize GPIOs
-  /* for ( UINT8 i = 0; i < IN_PINS;  i++ ) */
-  /*   { */
-  /*     gpio_init(in_pins[i]); */
-  /*     gpio_set_dir(in_pins[i], FALSE); */
-  /*   } */
-  /* for ( UINT8 i = 0; i < OUT_PINS; i++ ) */
-  /*   { */
-  /*     gpio_init(out_pins[i]); */
-  /*     gpio_set_dir(out_pins[i], TRUE); */
-  /*   } */
   gpio_init_mask(in_pins_mask | out_pins_mask);
   // set up GPIO directions
   gpio_set_dir_masked(in_pins_mask | out_pins_mask,
   		      out_pins_mask); 
-  // set all outputs 0
-  gpio_clr_mask(out_pins_mask);
+  // set LOG and NOPOWER to float high
+  gpio_pull_up(LOG_PIN); gpio_pull_up(NOPOWER_PIN);
+  // set all outputs to LOW
+  gpio_put_masked(out_pins_mask, 0); 
 }
 
 /* LED blinking */
@@ -796,61 +766,86 @@ void emulation_fail(const char* msg, const UINT8 code) {
 
 /* Read status pins */
 
-static inline UINT8 autostart() {
+static inline UINT8 autostart()
+{
   return gpio_get(II_AUTO_PIN);
 }
 
-static inline UINT8 fast() {
+static inline UINT8 fast()
+{
   return gpio_get(FAST_PIN);
 }
 
-static inline UINT8 logging() {
+static inline UINT8 logging()
+{
   return gpio_get(LOG_PIN);
 }
 
-static inline UINT8 no_power() {
+static inline UINT8 no_power()
+{
   return gpio_get(NOPOWER_PIN);
 }
 
-static inline UINT8 ack() {
+static inline UINT8 ack()
+{
   return gpio_get(ACK_PIN);
 }
 
 /* Wait for power on signal (and absence of ack signal) from host */
 
-static inline void wait_for_power_on() {
+static inline void wait_for_power_on()
+{
   while ( (no_power() == 1) ) sleep_ms(1);
   if ( logging_enabled ) puts("Power on detected");
 }
 
 /* Wait for host to remove power on and ack signal */
 
-static inline void wait_for_power_off() {
+static inline void wait_for_power_off()
+{
   while ( (no_power() == 0) ) sleep_ms(1);
-  if ( logging_enabled ) puts("Power off detected");
 }
 
 
 /* Wait for ACK to be 1 */
 
-static inline void wait_for_ack() {
+static inline void wait_for_ack()
+{
+  UINT32 count = 0;
   while ( ack() == 0 ) {
     if ( no_power() )
       {
 	if ( logging_enabled ) puts("NOPOWER while waiting for ACK HIGH");
-	longjmp(jbuf, 0); // a reset has been signalled
+	longjmp(jbuf, 0);
+      }
+    if ( ++count > time_out )
+      {
+	if (logging_enabled ) puts("Time out in wait_for_ack");
+	longjmp(jbuf, 0);
       }
   }
 }
 
-/* wait for ACK to be 0 - not used */
+/* wait for ACK to be 0 */
 
-static inline void wait_for_no_ack() {
+static inline void wait_for_no_ack()
+{
+  UINT32 count = 0;
   while ( ack() == 1 ) {
     if ( no_power() )
       {
 	if ( logging_enabled ) puts("NOPOWER while waiting for ACK LOW");
-	longjmp(jbuf, 0); // a reset has been signalled
+	longjmp(jbuf, 0); 
+      }
+    if ( ++count > time_out )
+      {
+	if (logging_enabled ) puts("Time out in wait_for_no_ack");
+	longjmp(jbuf, 0);
       }
   }
+}
+
+static void signals()
+{
+  printf("NOPOWER %d ACK %d\n", no_power(), ack());
 }
