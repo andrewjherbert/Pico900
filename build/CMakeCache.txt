@@ -14,12 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Value Computed by CMake
-920M_project_BINARY_DIR:STATIC=/home/ajh2/pico/Pico900/build
-
-//Value Computed by CMake
-920M_project_SOURCE_DIR:STATIC=/home/ajh2/pico/Pico900
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/arm-none-eabi-addr2line
 
@@ -175,7 +169,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=920M_project
+CMAKE_PROJECT_NAME:STATIC=Pico900
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/arm-none-eabi-ranlib
@@ -266,11 +260,8 @@ PICO_COMPILER_CXX:FILEPATH=/usr/bin/arm-none-eabi-g++
 //Default binaries to Copy code to RAM when booting from flash
 PICO_COPY_TO_RAM:BOOL=OFF
 
-//boot_stage2 short name
+//boot stage 2 short name
 PICO_DEFAULT_BOOT_STAGE2:STRING=compile_time_choice
-
-//boot_stage2 source file
-PICO_DEFAULT_BOOT_STAGE2_FILE:STRING=
 
 //Build debug builds with -O0
 PICO_DEOPTIMIZED_DEBUG:BOOL=OFF
@@ -294,13 +285,19 @@ PICO_SDK_FETCH_FROM_GIT:BOOL=
 PICO_SDK_FETCH_FROM_GIT_PATH:FILEPATH=
 
 //Path to the Raspberry Pi Pico SDK
-PICO_SDK_PATH:PATH=/home/ajh2/pico/pico-sdk
+PICO_SDK_PATH:PATH=/mnt/usbdrive1/pico/pico-sdk
 
 //Globablly enable stdio UART
 PICO_STDIO_UART:BOOL=ON
 
 //Globablly enable stdio semihosting 
 PICO_STDIO_USB:BOOL=OFF
+
+//Value Computed by CMake
+Pico900_BINARY_DIR:STATIC=/home/ajh2/pico/Pico900/build
+
+//Value Computed by CMake
+Pico900_SOURCE_DIR:STATIC=/home/ajh2/pico/Pico900
 
 //Path to a program.
 _Python3_EXECUTABLE:FILEPATH=/usr/bin/python3.7
@@ -433,7 +430,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=68
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=70
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -480,8 +477,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
-//Details about finding Doxygen
-FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen dot ][v1.8.13()]
+FAMILY_MCUS:INTERNAL=RP2040
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3.7][cfound components: Interpreter ][v3.7.3()]
 PICO_BOOT_STAGE2_DIR:INTERNAL=/home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2

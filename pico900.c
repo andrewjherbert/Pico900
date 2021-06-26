@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 08/06/2021
+// Copyright (c) Andrew Herbert - 26/06/2021
 
 // MIT Licence.
 
@@ -91,8 +91,11 @@
 // If a catastrophic error occurs the LED shows
 // a code indicating the error:
 //    3 - attempt to address outside bounds of store
-//    4 - attempt to execute an unimplemented type 14 instruction -
+//    4 - attempt to execute an unimplemented type 14 instruction
 //    5 - attempt to execute an unimplemented type 15 instruction
+//    6 - failed to detect end of ACK pulse
+//    7 - failed to detect end of RDR/PUNREQ pulse
+//    8 - NOPOWER detected HIGH
 //
 // The Pico is equipped with a push button which can used used
 // to force a restart of the Pico system.  This completely
@@ -107,27 +110,17 @@
 
 
 #include <stdio.h>
-#include <pico/stdlib.h>
-#include <hardware/gpio.h>
-#include <pico/binary_info.h>
-#include <tusb.h>
+#include<inttypes.h>
+#include "pico/stdlib.h"
+#include "hardware/gpio.h"
+#include "pico/binary_info.h"
+#include "pico/multicore.h"
+#include "tusb.h"
 #include <setjmp.h>
 
 // Each 900 18 bit word is stored as a 32 bit unsigned value.
 // For some operations we compute with a double word so we
-// use 64 bit unsigned quantities for these. Arithmetic is
-// performed using 32 and 64 bit integers.
-
-// Address calculations 16 bit unsigned arithmetic is used.
-
-// Input/output uses 8 bit characters.
-
-typedef int_fast32_t   INT32;
-typedef int_fast64_t   INT64;
-typedef uint_fast8_t   UINT8;
-typedef uint_fast16_t  UINT16;
-typedef uint_fast32_t  UINT32;
-typedef uint_fast64_t  UINT64;
+// use 64 bit unsigned quantities for these. 
 
 
 /**********************************************************/
@@ -176,7 +169,8 @@ typedef uint_fast64_t  UINT64;
 #define FAST_PIN    20 // set HIGH to enable running at full speed
 #define RDRREQ_PIN  21 // Pico sets HIGH to request reader input and awaits ACK
 #define PUNREQ_PIN  22 // Pico sets HIGH to request punch output and awiats ACK
-#define TTYSEL_PIN  26 // Pico sets HIGH to select teleprinter, LOW for paper tape
+#define TTYSEL_PIN  26 // Pico sets HIGH to select teleprinter,
+                       // LOW for paper tape
 #define LED_PIN     25 // onboard LED
 // GPIO26 spare
 // GPIO27 spare
@@ -203,189 +197,244 @@ typedef uint_fast64_t  UINT64;
 #define B_REG_LEVEL_4 7
 
 // Codes for emulation failures
-#define EMULATION_ADDR_FAIL 3
-#define EMULATION_14_FAIL   4
-#define EMULATION_15_FAIL   5
+#define EMULATION_ADDR_FAIL    3 // invalid address detected
+#define EMULATION_14_FAIL      4 // unimplmented 14 order case
+#define EMULATION_15_FAIL      5 // unimplemented 15 order case
+#define ACK_START_FAIL         6 // premature start of ACK pulse
+#define ACK_END_FAIL           7 // end of ACK pulse not detected
+#define NOPOWER_FAIL           8 // NOPOWER detected
+#define TEST_FAIL              9 // Catch all
+#define EXIT_FAIL             10 // Program exit reached
 
-#define time_out 200000000 //  about 10s
+// Limit on polling loops
+#define POLL_LIMIT   2000 // max polling cycles for end of ACK, end of REQUEST
+#define GLITCH_LIMIT   10 // maximum number of NOPOWER gliches allowed
 
 
 /**********************************************************/
 /*                         GLOBALS                        */
 /**********************************************************/
 
-UINT32 store[STORE_SIZE]; // core store
+uint32_t store[STORE_SIZE]; // core store
 
-const UINT8 in_pins[IN_PINS] =  { NOPOWER_PIN,ACK_PIN, II_AUTO_PIN, LOG_PIN, FAST_PIN,
-		                  RDR_1_PIN, RDR_2_PIN, RDR_4_PIN, RDR_8_PIN,
-				  RDR_16_PIN, RDR_32_PIN, RDR_64_PIN, RDR_128_PIN };
+const uint32_t in_pins[IN_PINS] =
+  { NOPOWER_PIN,ACK_PIN, II_AUTO_PIN, LOG_PIN, FAST_PIN,
+    RDR_1_PIN, RDR_2_PIN, RDR_4_PIN, RDR_8_PIN,
+    RDR_16_PIN, RDR_32_PIN, RDR_64_PIN, RDR_128_PIN };
 
-const UINT8 out_pins[OUT_PINS] = { RDRREQ_PIN, PUNREQ_PIN, TTYSEL_PIN, PUN_1_PIN,
-				   PUN_2_PIN, PUN_4_PIN, PUN_8_PIN, PUN_16_PIN,
-				   PUN_32_PIN, PUN_64_PIN, PUN_128_PIN, LED_PIN };
+const uint32_t out_pins[OUT_PINS] =
+  { RDRREQ_PIN, PUNREQ_PIN, TTYSEL_PIN, PUN_1_PIN,
+    PUN_2_PIN, PUN_4_PIN, PUN_8_PIN, PUN_16_PIN,
+    PUN_32_PIN, PUN_64_PIN, PUN_128_PIN, LED_PIN };
 
-UINT8 logging_enabled   = 0; // 1 = enable logging, 0 = disable logging to usb
-                             // must default to 0 so no logging occurs until
-                             // LOG_PIN is sensed in main()
-UINT8 fast_enabled      = 0; // 1 = run at fastest speed, 0 = run at simulated
-                             // 920M speed
-UINT8 autostart_enabled = 0; // 0 = autostart after reset, 1 = run initial
-                             // instructions after reset
+uint32_t logging_enabled   = 0; // 1 = enable logging,
+                                // 0 = disable logging to usb
+                                // must default to 0 so no logging occurs until
+                                // LOG_PIN is sensed in main()
+uint32_t fast_enabled      = 0; // 1 = run at fastest speed,
+                                // 0 = run at simulated
+                                // 920M speed
+uint32_t autostart_enabled = 0; // 0 = autostart after reset, 1 = run initial
+                                // instructions after reset
 
-static jmp_buf jbuf;        // used by setjmp in main
+static jmp_buf jbuf;            // used by setjmp in main
 
+static uint64_t cycles = 0;     // used in diagnostics
+static uint32_t max_poll = 0;
+static uint32_t monitoring = FALSE;
+static uint32_t glitches = 0;
 
+  
 /**********************************************************/
 /*                         FUNCTIONS                      */
 /**********************************************************/
 
+static void     master();                      // master routine       
+static void     emulate(const uint32_t start); // run emulation from start
+static void     check_address(const uint32_t add);
+                                               // check address is within
+                                               // bounds 
+static void     load_initial_instructions();   // load initial orders
+static uint32_t make_instruction(const uint32_t m, const uint32_t f,
+				 const uint32_t a);
+                                               // assemble an instruction
+static void     set_up_gpios();                // initialize GPIO interface 
+static void     led_on();                      // turn onboard LED on
+static void     led_off();                     // turn onboard LED off
+static void     emulation_fail(const char *msg, const uint32_t code);
+                                               // signal emulation hung on
+                                               // machine fault
+static uint32_t logging();                     // TRUE is logging enabled
+static uint32_t fast();                        // TRUE if running in fast mode
+static uint32_t autostart();                   // TRUE if AUTOSTART, otherwise
+                                               // initial instructions
+static uint32_t no_power();                    // TRUE if power off
+                                               // (NOPOWER TRUE)
+static uint32_t ack();                         // status of ACK
+static void     wait_for_power_on();           // wait for NOPOWER LOW
+static void     wait_for_power_off();          // wait for NOPOWER HIGH
+static void     wait_for_ack();                // wait for ACK HIGH
+static void     wait_for_no_ack();             // wait for ACK LOW
+static uint32_t get_pts_ch(uint32_t tty);      // read from paper tape station
+static void     put_pts_ch(uint32_t ch, uint32_t tty);
+                                               // punch to paper tape station
 
-void                 emulate(const UINT16 start);  // run emulation from start
-static inline void   check_address(const UINT16 add);
-                                                   // check address is within bounds 
-static inline void   load_initial_instructions();  // load initial orders
-static inline UINT32 make_instruction(const UINT8 m, const UINT8 f, const UINT16 a);
-                                                   //assemble an instruction
-static inline void   set_up_gpios();               // initialize GPIO interface 
-static inline void   led_on();                     // turn onboard LED on
-static inline void   led_off();                    // turn onboard LED off
-static void          emulation_fail(const char *msg, const UINT8 code);
-                                                   // signal emulation hung on
-                                                   // machine fault
-static inline UINT8  logging();                    // TRUE is logging enabled
-static inline UINT8  fast();                       // TRUE if running in fast mode
-static inline UINT8  autostart();                  // TRUE if AUTOSTART, otherwise
-                                                   // initial instructions
-static inline UINT8  no_power();                   // TRUE if power off (NOPOWER TRUE)
-static inline UINT8  ack();                        // status of ACK
-static inline void   wait_for_power_on();          // wait for NOPOWER LOW
-static inline void   wait_for_power_off();         // wait for NOPOWER HIGH
-static inline void   wait_for_ack();               // wait for ACK HIGH
-static inline void   wait_for_no_ack();            // wait for ACK LOW
-static inline UINT8  get_pts_ch(UINT8 tty);        // read from paper tape station
-static inline void   put_pts_ch(UINT8 ch, UINT8 tty);
-                                                   // punch to paper tape station
-
-static inline void signals();                      // for  diagnostic use
-static void reader_test();                         
-static void punch_test();
+static void signals();
+static void reader_test(uint64_t max_cycles);                         
+static void punch_test(uint64_t max_cycles);
+static void monitor();
 
 
 /**********************************************************/
 /*                           MAIN                         */
 /**********************************************************/
 
-int main() {
-
-  static UINT32 restarts = 0;
-
+int32_t main()
+{
   bi_decl(bi_program_description("Elliott 920M Emulator by Andrew Herbert"));
-
+  
   stdio_init_all(); // initialise stdio
   set_up_gpios();   // configure interface to outside world
-
-  // long jump to here resets simulation
-  if ( setjmp(jbuf) ) // test if a longjmp occurred
-    if ( logging_enabled )
-      {
-	puts("Pico900 Halted after error - press reset to restart");
-	while ( TRUE ) sleep_ms(1000);
-      }
-  
-   // 4 blinks to signal waking up
-  for ( UINT8 i = 1 ; i <= 4 ; i++ )
+  // 4 fast blinks to signal waking up
+  for ( uint32_t i = 1 ; i <= 4 ; i++ )
     {
       led_on();
       sleep_ms(250);
       led_off();
       sleep_ms(250);
     }
-
-  sleep_ms(1000);
-
   // set local flags based on external inputs
   logging_enabled   = logging();     // print logging messages to usb?
   fast_enabled      = fast();        // run at maximum speed?
   autostart_enabled = autostart();   // autostart or initial orders
+  multicore_launch_core1(master);    // run emulation in core1
+  monitor();                         // monitor from core0
+}
 
+// main system runs in core1
+static void master()
+{
+  int32_t fail_code;
   if ( logging_enabled )
     {
       while ( !tud_cdc_connected() ) // wait for usb to wake up
-	{
-	  led_on();
-	  sleep_ms(1000);
-	  led_off();
-	}
-      printf("\n\n\nPico900 Starting (%u)\n", ++restarts);
+	sleep_ms(500);
+      printf("\n\n\nPico900 Starting\n");
       if ( fast_enabled )
-	puts("Fast mode");
+	printf("Fast mode\n");
       else
-	puts("Slow mode");
+	printf("Slow mode\n");
       if ( autostart_enabled )
-	puts("Autostart");
+	printf("Autostart\n");
       else
-	puts("Initial instructions");
+	printf("Initial instructions\n");
     }
    
-  while ( TRUE ) // run emulation for ever
-  {
-    if ( logging_enabled ) puts("Waiting for power ok (-NOPOWER)");
-    wait_for_power_on();
-    if ( logging_enabled ) puts("Power ok, starting emulation");
-    led_on(); // set LED to indicate running
+  if ( logging_enabled ) printf("Waiting for power (-NOPOWER)\n");
+  wait_for_power_on();
+  if ( logging_enabled ) printf("Power on\n");
+	
+  // long jump to here on error
+  if ( fail_code = setjmp(jbuf) ) // test if a longjmp occurred
+    {
+      monitoring = FALSE; // disable conflicting monitoring i/o
+      sleep_ms(2000); // and allow to subside
+      if ( logging_enabled )
+	printf("Pico900 halted after error with code %d - push reset to restart\n",
+	       fail_code);
+      while ( TRUE )  // loop until reset flashing the code
+	{
+	  sleep_ms(1000);
+	  for ( uint32_t j = 1 ; j <= fail_code ; j++ )
+	    {
+	      led_on(); sleep_ms(250);led_off(); sleep_ms(100);
+	    }
+	}
+    }
 
-    reader_test();
+  // run emulation
+  while ( TRUE )
+    {
+      glitches = 0; // reset glitch counter
+      punch_test(10000000);
+      sleep_ms(1);
+      glitches = 0; // reset glitch counter
+      reader_test(10000000);
+    }
+  longjmp(jbuf, EXIT_FAIL); // STOP HERE
+  load_initial_instructions();
+  emulate(8181); // run emulation starting at location 8181
+  longjmp(jbuf, EXIT_FAIL); // in principle emulate never returns...
     
-    load_initial_instructions(); 
-    emulate(8181); // run emulation starting at location 8181
-    // will only end up here on a failure or reset, in either case, restart
-  }
 }
 
-/* The following  test routines are only for use during
-the development phase of pico900.  They will not be used in the operational
+/* The following  test routines are only for use during the development phase 
+of pico900.  They will not be used in the operational
 system */
 
-void punch_test()
+static inline void punch_test(uint64_t max)
 {
   if ( logging_enabled )
-    puts("Pico900 punch test starting");
+    printf("Pico900 punch test starting\n");
   else
     {
-      puts("No logging - stopped");
+      printf("No logging - stopped\n");
       return;
     }
-  for ( UINT32 c = 0 ; ; c++ )
+  for ( cycles = 0 ; cycles < max ; cycles++ )
     {
-      printf("Cycle %6d\n", c);
-      put_pts_ch(c%256, TAPE);
-      sleep_ms(10000);
+      put_pts_ch(cycles&255, TAPE);
+      busy_wait_us_32(10); // simulate instruction delay
     }
-  puts("Pico900 punch tests complete");
+  printf("Pico900 punch test complete\n");
 }
 
-void reader_test()
+static inline void reader_test(uint64_t max)
 {
-  UINT8 errors = 0;
   if ( logging_enabled )
-    puts("Pico900 reader test starting");
+    printf("Pico900 reader test starting\n");
   else
     {
-      puts("Reader test - no logging - stopped");
+      printf("Reader test - no logging - stopped\n");
       return;
     }
   // simple test loop emulating read
-  for ( UINT32 c = 0 ; ; c++ )
+  for (cycles = 0 ; cycles < max ; cycles++ )
     {
-      if ( c % 1000 == 0 ) printf("Cycle %u\n", c);
-      int ch = get_pts_ch(TAPE);
-      if  (ch != (c%256) ) 
-       	{ 
-       	  printf("Failed after %d got %d, expected %d\n",c, ch, c%256); 
-       	  longjmp(jbuf, 0);
-	} 
+      uint32_t got      = get_pts_ch(TAPE);
+      uint32_t expected = cycles&255;
+      if  ( got != expected ) 
+       	{
+       	  printf("Failed after %"PRIu64" cycles, got %u, expected %u\n",
+		 cycles, got, expected); 
+       	  longjmp(jbuf, TEST_FAIL);
+	  /* NOT REACHED */
+	}
+      busy_wait_us_32(10); // simulate instruction delay
     }
-  puts("Pico900 reader test complete");
+  printf("Reader test complete\n");
+}
+
+static inline void monitor()
+{
+  monitoring = TRUE;
+  for ( uint32_t tick = 1 ; ; tick++ )
+    {
+      for ( uint32_t i = 0 ; i < 5 ; i++ )
+	{
+	  led_on();
+	  sleep_ms(1000);
+          led_off();
+	  sleep_ms(1000);
+	}
+      if ( monitoring && logging_enabled )
+	{
+	  printf("Time %7u secs, %10"PRIu64" cycles, "
+		 "max poll %3u,  NOPOWER HIGH glitches %u\n",
+		 tick*10, cycles, max_poll, glitches);
+	}
+      glitches = 0;
+    }
 }
 	    
 
@@ -395,17 +444,20 @@ void reader_test()
 
 /* 900 series emulator */
 
-void emulate (const UINT32 start) {
+void emulate (const uint32_t start) {
 
-  static UINT32 a_reg  = 0;
-  static UINT32 q_reg  = 0;
-  static UINT32 b_reg  = B_REG_LEVEL_1;
-  static UINT32 sc_reg = SCR_LEVEL_1; // address in store of B static and SCR
-  static UINT8  level = 1; // priority level
-  static UINT32 instruction, f, a, m;
-  static INT32  last_scr = -1; // scr of previous instruction
+  static uint32_t a_reg  = 0;
+  static uint32_t q_reg  = 0;
+  static uint32_t b_reg  = B_REG_LEVEL_1;
+  static uint32_t sc_reg = SCR_LEVEL_1; // address in store of B static and SCR
+  static uint32_t level = 1; // priority level
+  static uint32_t instruction, f, a, m;
+  static int32_t  last_scr = -1; // scr of previous instruction
 
-  if ( logging_enabled ) puts("Emulation starting\n");
+  if ( logging_enabled )
+    {
+      printf("Emulation starting\n");
+    }
 
   store[sc_reg] = start; // execution begins at location 'start'.
 
@@ -414,12 +466,15 @@ void emulate (const UINT32 start) {
     {
       if ( no_power() )
 	{
-	  if ( logging_enabled ) 
-            puts("NOPOWER HIGH detected at instruction fetch");
-	  longjmp(jbuf, 0); // reset signalled
+	  if ( logging_enabled )
+	    {
+	      printf("NOPOWER HIGH detected at instruction fetch");
+	    }
+	  longjmp(jbuf, NOPOWER_FAIL); // reset signalled
+	  /* NOT REACHED */
 	}
 
-      if ( !fast_enabled ) sleep_us(11); // run at roughly 920M speed
+      if ( !fast_enabled ) busy_wait_us_32(11); // run at roughly 920M speed
 
       // increment SCR
       last_scr = store[sc_reg]++; // remember SCR
@@ -453,7 +508,7 @@ void emulate (const UINT32 start) {
 
           case 2: // Negate and add
 	    check_address(m);
-	    a_reg = (UINT32) ((INT32) store[m] - (INT32) a_reg) & MASK_18;
+	    a_reg = (uint32_t) ((int32_t) store[m] - (int32_t) a_reg) & MASK_18;
 	    break;
 
           case 3: // Store Q
@@ -511,17 +566,17 @@ void emulate (const UINT32 start) {
 	      check_address(m);
 	      {
 		// extend sign bits for a and store[m]
-	        const INT64 al = ( ( a_reg >= BIT_18 )
-		 		   ? ((INT64) a_reg - (INT64) BIT_19)
-		  		   : (INT64) a_reg );
-	        const INT64 sl = ( ( store[m] >= BIT_18 )
+	        const int64_t al = ( ( a_reg >= BIT_18 )
+		 		   ? ((int64_t) a_reg - (int64_t) BIT_19)
+		  		   : (int64_t) a_reg );
+	        const int64_t sl = ( ( store[m] >= BIT_18 )
 				   ? store[m] - BIT_19
 				   : store[m] );
-	        INT64 prod = al * sl;
-	        q_reg = (UINT32) ((prod << 1) & MASK_18);
+	        int64_t prod = al * sl;
+	        q_reg = (uint32_t) ((prod << 1) & MASK_18);
 	        if   ( al < 0 ) q_reg |= 1;
 	        prod = prod >> 17; // arithmetic shift
- 	        a_reg = (UINT32) (prod & MASK_18);
+ 	        a_reg = (uint32_t) (prod & MASK_18);
 	        break;
 	      }
 	    }
@@ -531,30 +586,30 @@ void emulate (const UINT32 start) {
 	      check_address(m);
 	      {
 	        // extend sign bit for aq
-	        const INT64 al   = ( ( a_reg >= BIT_18 )
-				     ? (INT64) a_reg - (INT64) BIT_19
-				     : (INT64) a_reg ); // sign extend
-	        const INT64 ql   = (INT64) q_reg;
-	        const INT64 aql  = (al << 18) | ql;
-	        const INT64 sl   = ( ( store[m] >= BIT_18 )
-				     ? (INT64) store[m] - (INT64) BIT_19
-				     : (INT64) store[m] );
-                const INT32 quot = (INT32)(( aql / sl) >> 1) & MASK_18;
+	        const int64_t al   = ( ( a_reg >= BIT_18 )
+				     ? (int64_t) a_reg - (int64_t) BIT_19
+				     : (int64_t) a_reg ); // sign extend
+	        const int64_t ql   = (int64_t) q_reg;
+	        const int64_t aql  = (al << 18) | ql;
+	        const int64_t sl   = ( ( store[m] >= BIT_18 )
+				     ? (int64_t) store[m] - (int64_t) BIT_19
+				     : (int64_t) store[m] );
+                const int32_t quot = (int32_t)(( aql / sl) >> 1) & MASK_18;
   	        a_reg = quot | 1;
 	        q_reg = quot & 0777776;
 	        break;
 	      }
 	    }
 
-          case 14:  // Shift - assumes >> applied to a signed INT64 or INT32
+          case 14:  // Shift - assumes >> applied to a signed int64_t or int32_t
 	            // is arithmetic
 	    {
-              UINT8 places = m & ADDR_MASK;
-	      const UINT64 al  = ( ( a_reg >= BIT_18 )
-				   ? (INT64) a_reg - (INT64) BIT_19
-				   : (INT64) a_reg ); // sign extend
-	      const UINT64 ql  = q_reg;
-	      UINT64 aql = (al << 18) | ql;
+              uint32_t places = m & ADDR_MASK;
+	      const uint64_t al  = ( ( a_reg >= BIT_18 )
+				   ? (int64_t) a_reg - (int64_t) BIT_19
+				   : (int64_t) a_reg ); // sign extend
+	      const uint64_t ql  = q_reg;
+	      uint64_t aql = (al << 18) | ql;
 	      
 	      if   ( places <= 2047 )
 	        {
@@ -574,37 +629,37 @@ void emulate (const UINT32 start) {
 	          /* NOT REACHED */
 	        }
 
-	      q_reg = (INT32) (aql & MASK_18);
-	      a_reg = (INT32) ((aql >> 18) & MASK_18);
+	      q_reg = (int32_t) (aql & MASK_18);
+	      a_reg = (int32_t) ((aql >> 18) & MASK_18);
 	      break;
 	    }
 
             case 15:  // Input/output etc
 	      {
-                const UINT16 z = m & ADDR_MASK;
+                const uint32_t z = m & ADDR_MASK;
 	        switch   ( z )
 	    	  {
 
 		    case 2048: // read from tape reader
 		      { 
-	                UINT8 ch = get_pts_ch(TAPE); 
+	                uint32_t ch = get_pts_ch(TAPE); 
 	                a_reg = ((a_reg << 7) | ch) & MASK_18;
 	                break;
 	               }
 
 	            case 2052: // read from teletype
 		      {
-	                UINT8 ch = get_pts_ch(TTY);
+	                uint32_t ch = get_pts_ch(TTY);
 	                a_reg = ((a_reg << 7) | ch) & MASK_18;
 	                break;
 	              }
 
 	            case 6144: // write to paper tape punch 
-	              put_pts_ch((UINT8)(a_reg & 255), TAPE);
+	              put_pts_ch((uint32_t)(a_reg & 255), TAPE);
 	              break;
 
 	            case 6148: // write to teletype
-	              put_pts_ch((UINT8)(a_reg & 255), TTY);
+	              put_pts_ch((uint32_t)(a_reg & 255), TTY);
 	              break;	      
 	  
 	            case 7168:  // Level terminate
@@ -625,7 +680,7 @@ void emulate (const UINT32 start) {
 
 /* check address within bounds */
 
-static inline void check_address(const UINT16 m)
+static inline void check_address(const uint32_t m)
 {
   if ( m >= STORE_SIZE)
     emulation_fail("**** Addressing beyond available store\n",
@@ -640,40 +695,49 @@ static inline void check_address(const UINT16 m)
 
 /*  Input a character from paper tape station */
 
-static inline UINT8 get_pts_ch(const UINT8 tty) {
-  static UINT8 ch;
-  if ( ack() == 1 )
+static inline uint32_t get_pts_ch(const uint32_t tty) {
+  static uint32_t ch;
+  if ( ack() )
     {
-      if ( logging_enabled ) puts("ACK found at start of get_pts_ch");
-      longjmp(jbuf, 0);
+      if ( logging_enabled )
+	{
+	  printf("ACK found at start of get_pts_ch cycle %"PRIu64"\n", cycles);
+	  longjmp(jbuf, ACK_START_FAIL);
+        /* NOT REACHED */
+	}
     }
-  if ( tty == 1 ) gpio_put(TTYSEL_PIN, 1);
+  if ( tty ) gpio_put(TTYSEL_PIN, 1);
   gpio_put(RDRREQ_PIN, 1);
   wait_for_ack();
-    ch = (gpio_get_all() & RDR_PINS_MASK) >> RDR_1_PIN; // read 8 bits
+  ch = (gpio_get_all() & RDR_PINS_MASK) >> RDR_1_PIN; // read 8 bits
   wait_for_no_ack();
-    if ( tty ) gpio_put(TTYSEL_PIN, 0);
+  busy_wait_us_32(1);
+  if ( tty ) gpio_put(TTYSEL_PIN, 0);
   gpio_put(RDRREQ_PIN, 0);
   return ch;
 }
 
 /* Output a character to the paper tape station */
 
-static inline void put_pts_ch(const UINT8 ch, const UINT8 tty)
+static inline void put_pts_ch(const uint32_t ch, const uint32_t tty)
 {
-  if ( ack() == 1 )
+  if ( ack() )
     {
-      if (logging_enabled ) puts("ACK found at start of put_pts_ch");
-      longjmp(jbuf, 0);
+      if (logging_enabled )
+	{
+	  printf("ACK found at start of put_pts_ch in cycle %"PRIu64"\n", cycles);
+	}
+      longjmp(jbuf, ACK_END_FAIL);
+      /* NOT REACHED */
     }
   gpio_put_masked(PUN_PINS_MASK, ch << PUN_1_PIN); // write 8 bits
-  if ( tty == 1 ) gpio_put(TTYSEL_PIN, 1);
+  if ( tty ) gpio_put(TTYSEL_PIN, 1);
+  busy_wait_us_32(1);  // let data pins settle
   gpio_put(PUNREQ_PIN, 1); // request write
   wait_for_ack();
-  if ( ack() != 1 ) puts("Missed ACK");
   wait_for_no_ack();
-  if ( ack() != 0 ) puts("Missed ACK reset");
-  if ( tty == 1 ) gpio_put(TTYSEL_PIN, 0);
+  busy_wait_us_32(1);
+  if ( tty ) gpio_put(TTYSEL_PIN, 0);
   gpio_put(PUNREQ_PIN, 0);
 }
 
@@ -699,14 +763,14 @@ static inline void load_initial_instructions()
   store[8189] = make_instruction(0,  4,    1);
   store[8190] = make_instruction(0,  9, 8182);
   store[8191] = make_instruction(0,  8, 8177);
-  printf("Initial orders loaded\n");
 }
 
 /* assemble an instruction */
 
-static inline UINT32 make_instruction(const UINT8 m, const UINT8 f, const UINT16 a)
+static inline uint32_t make_instruction(const uint32_t m, const uint32_t f,
+					const uint32_t a)
 {
-  return (((UINT32)m << 17) | ((UINT32)f << 13) | (UINT32)a);
+  return (((uint32_t)m << 17) | ((uint32_t)f << 13) | (uint32_t)a);
 }
 
 /**********************************************************/
@@ -718,19 +782,17 @@ static inline UINT32 make_instruction(const UINT8 m, const UINT8 f, const UINT16
 
 static inline void set_up_gpios()
 {
-  UINT32 in_pins_mask = 0, out_pins_mask = 0;
+  uint32_t in_pins_mask = 0, out_pins_mask = 0;
   // calculate masks
-  for ( UINT8 i = 0; i < IN_PINS;  i++ ) in_pins_mask  |= (1 << in_pins[i]);
-  for ( UINT8 i = 0; i < OUT_PINS; i++ ) out_pins_mask |= (1 << out_pins[i]);
+  for ( uint32_t i = 0; i < IN_PINS;  i++ ) in_pins_mask  |= (1 << in_pins[i]);
+  for ( uint32_t i = 0; i < OUT_PINS; i++ ) out_pins_mask |= (1 << out_pins[i]);
   // initialize GPIOs
   gpio_init_mask(in_pins_mask | out_pins_mask);
   // set up GPIO directions
   gpio_set_dir_masked(in_pins_mask | out_pins_mask,
   		      out_pins_mask); 
-  // set LOG and NOPOWER to float high
-  gpio_pull_up(LOG_PIN); gpio_pull_up(NOPOWER_PIN);
   // set all outputs to LOW
-  gpio_put_masked(out_pins_mask, 0); 
+  gpio_put_masked(out_pins_mask, 0);
 }
 
 /* LED blinking */
@@ -746,47 +808,43 @@ static inline void led_off()
 }
 
 // Fatal error
-void emulation_fail(const char* msg, const UINT8 code) {
+void emulation_fail(const char* msg, const uint32_t code) {
   // flash code then pause
   if ( logging_enabled )
-    printf("Emulation failed: %s (%d)\n", msg);
-  while ( TRUE )  // loop until reset flashing the code
     {
-      sleep_ms(1000);
-      for ( UINT8 j = 1 ; j <= code ; j++ )
-        {
-	  led_on();
-           sleep_ms(250);
-	 led_off();
-	  sleep_ms(100);
-        }
-      if ( no_power() ) longjmp(jbuf,0); // restart on power cycle
+      printf("Emulation failed: %s (%d)\n", msg);
     }
+      longjmp(jbuf, code); // restart on power cycle
 }
 
 /* Read status pins */
 
-static inline UINT8 autostart()
+static inline uint32_t autostart()
 {
   return gpio_get(II_AUTO_PIN);
 }
 
-static inline UINT8 fast()
+static inline uint32_t fast()
 {
   return gpio_get(FAST_PIN);
 }
 
-static inline UINT8 logging()
+static inline uint32_t logging()
 {
   return gpio_get(LOG_PIN);
 }
 
-static inline UINT8 no_power()
+static inline uint32_t no_power() // filter out short HIGH spikes
 {
-  return gpio_get(NOPOWER_PIN);
+  uint32_t count = 0;
+  while ( gpio_get(NOPOWER_PIN) )
+    if ( ++count  > GLITCH_LIMIT )
+      return 1; // seen enough  consecutive 1s
+  if ( count ) glitches++; // we saw some 1s
+  return 0;
 }
 
-static inline UINT8 ack()
+static inline uint32_t ack()
 {
   return gpio_get(ACK_PIN);
 }
@@ -795,52 +853,63 @@ static inline UINT8 ack()
 
 static inline void wait_for_power_on()
 {
-  while ( (no_power() == 1) ) sleep_ms(1);
-  if ( logging_enabled ) puts("Power on detected");
+  uint32_t count = 0;
+  while ( no_power()) sleep_ms(1);
 }
 
 /* Wait for host to remove power on and ack signal */
 
 static inline void wait_for_power_off()
 {
-  while ( (no_power() == 0) ) sleep_ms(1);
+  uint32_t count = 0;
+  while ( !no_power() ) sleep_ms(1);
 }
 
-
-/* Wait for ACK to be 1 */
+/* Wait for ACK to be 1  */
 
 static inline void wait_for_ack()
 {
-  UINT32 count = 0;
-  while ( ack() == 0 ) {
+  uint32_t np_count = 0;
+  while ( !ack() )
     if ( no_power() )
       {
-	if ( logging_enabled ) puts("NOPOWER while waiting for ACK HIGH");
-	longjmp(jbuf, 0);
+	if ( logging_enabled )
+	  {
+	    printf("NOPOWER while waiting for ACK HIGH in cycle %s"
+		   "%"PRIu64"\n", "", cycles);
+	  }
+	longjmp(jbuf, NOPOWER_FAIL);
+	/* NOT REACHED */
       }
-    if ( ++count > time_out )
-      {
-	if (logging_enabled ) puts("Time out in wait_for_ack");
-	longjmp(jbuf, 0);
-      }
-  }
+    // We can't time this out as might be delayed by tty input waiting
+    // on user, or paper tape station offline
 }
 
 /* wait for ACK to be 0 */
 
 static inline void wait_for_no_ack()
 {
-  UINT32 count = 0;
-  while ( ack() == 1 ) {
+  uint32_t poll_count = 0, np_count = 0;
+  while ( ack() ) {
     if ( no_power() )
       {
-	if ( logging_enabled ) puts("NOPOWER while waiting for ACK LOW");
-	longjmp(jbuf, 0); 
+	if ( logging_enabled )
+	  {
+	    printf("NOPOWER while waiting for ACK LOW in cycle %"PRIu64"\n", cycles);
+	  }
+	longjmp(jbuf, NOPOWER_FAIL);
+	/* NOT REACHED */
       }
-    if ( ++count > time_out )
+    if ( ++poll_count > max_poll ) max_poll = poll_count;
+    if ( poll_count > POLL_LIMIT )
       {
-	if (logging_enabled ) puts("Time out in wait_for_no_ack");
-	longjmp(jbuf, 0);
+	if (logging_enabled )
+	  {
+	    printf("Time out in wait_for_no_ack in cycle %"PRIu64" "
+		   "after polling %u times\n", cycles, max_poll);
+	  }
+	longjmp(jbuf, ACK_END_FAIL);
+	/* NOT REACHED */
       }
   }
 }

@@ -9,14 +9,18 @@
 /home/ajh2/pico/Pico900/pico900.c
 stdio.h
 -
+inttypes.h
+-
 pico/stdlib.h
--
+/home/ajh2/pico/Pico900/pico/stdlib.h
 hardware/gpio.h
--
+/home/ajh2/pico/Pico900/hardware/gpio.h
 pico/binary_info.h
--
+/home/ajh2/pico/Pico900/pico/binary_info.h
+pico/multicore.h
+/home/ajh2/pico/Pico900/pico/multicore.h
 tusb.h
--
+/home/ajh2/pico/Pico900/tusb.h
 setjmp.h
 -
 
@@ -25,12 +29,6 @@ common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/common/tusb_common.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.h
-assert.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/assert.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/device/usbd.h
 audio.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio.h
 
@@ -47,42 +45,34 @@ common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/device/usbd.h
 cdc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/common/tusb_common.h
-host/usbh.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/host/usbh.h
 cdc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h
 
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/device/usbd.h
+
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.h
+dfu.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu.h
+
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.h
+dfu.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/common/tusb_common.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/device/usbd.h
 hid.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_host.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/common/tusb_common.h
-host/usbh.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/host/usbh.h
 hid.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h
 
@@ -91,10 +81,6 @@ common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/common/tusb_common.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/device/usbd.h
 class/audio/audio.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/class/audio/audio.h
 midi.h
@@ -107,24 +93,14 @@ common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/device/usbd.h
 msc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/msc.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_host.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/common/tusb_common.h
-host/usbh.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/host/usbh.h
 msc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/msc/msc.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.h
-common/tusb_common.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/net/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/net/device/usbd.h
 class/cdc/cdc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/net/class/cdc/cdc.h
 
@@ -139,14 +115,10 @@ usbtmc.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/common/tusb_common.h
-device/usbd.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/device/usbd.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.h
 common/tusb_common.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/common/tusb_common.h
-host/usbh.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/host/usbh.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_common.h
 stdbool.h
@@ -165,24 +137,26 @@ tusb_compiler.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h
 tusb_verify.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_verify.h
+tusb_types.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_types.h
 tusb_error.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_error.h
 tusb_timeout.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_timeout.h
-tusb_types.h
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_types.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h
+intrinsics.h
+-
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_error.h
 tusb_option.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_option.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h
-stdint.h
--
-stdbool.h
--
+common/tusb_common.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/common/tusb_common.h
+osal/osal.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/osal/osal.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_timeout.h
 stdbool.h
@@ -216,11 +190,15 @@ common/tusb_common.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/hcd.h
 common/tusb_common.h
--
-
-/home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/usbh.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/common/tusb_common.h
 osal/osal.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/osal/osal.h
+common/tusb_fifo.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/common/tusb_fifo.h
+
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/usbh.h
+common/tusb_common.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/common/tusb_common.h
 hcd.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/host/hcd.h
 
@@ -235,6 +213,8 @@ osal_mynewt.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/osal_mynewt.h
 osal_pico.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/osal_pico.h
+osal_rtthread.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/osal_rtthread.h
 tusb_os_custom.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/tusb_os_custom.h
 
@@ -267,6 +247,10 @@ pico/critical_section.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/pico/critical_section.h
 common/tusb_fifo.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/common/tusb_fifo.h
+
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/osal_rtthread.h
+rtthread.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/osal/rtthread.h
 
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/tusb.h
 common/tusb_common.h
@@ -303,6 +287,8 @@ class/usbtmc/usbtmc_device.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.h
 class/dfu/dfu_rt_device.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.h
+class/dfu/dfu_device.h
+/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.h
 class/net/net_device.h
 /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.h
 class/bth/bth_device.h
@@ -395,6 +381,8 @@ pico/lock_core.h
 /home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/lock_core.h
 pico.h
 /home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico.h
+pico/time.h
+/home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico/time.h
 hardware/sync.h
 /home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/hardware/sync.h
 
@@ -405,6 +393,14 @@ pico/lock_core.h
 /home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/sem.h
 pico/lock_core.h
 /home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico/lock_core.h
+
+/home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/sync.h
+pico/sem.h
+/home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico/sem.h
+pico/mutex.h
+/home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico/mutex.h
+pico/critical_section.h
+/home/ajh2/pico/pico-sdk/src/common/pico_sync/include/pico/pico/critical_section.h
 
 /home/ajh2/pico/pico-sdk/src/common/pico_time/include/pico/time.h
 pico.h
@@ -464,6 +460,8 @@ hardware/address_mapped.h
 hardware/regs/uart.h
 /home/ajh2/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/hardware/regs/uart.h
 
+/home/ajh2/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
+
 /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h
 pico.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/pico.h
@@ -498,6 +496,14 @@ pico.h
 hardware/structs/uart.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/hardware/structs/uart.h
 
+/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/include/pico/multicore.h
+pico/types.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/include/pico/pico/types.h
+pico/sync.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/include/pico/pico/sync.h
+hardware/structs/sio.h
+/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/include/pico/hardware/structs/sio.h
+
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 sys/cdefs.h
 -
@@ -510,12 +516,6 @@ hardware/platform_defs.h
 pico.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/pico.h
 
-/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h
-pico/stdio.h
-/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/pico/stdio.h
-hardware/uart.h
-/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/hardware/uart.h
-
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
 pico/stdio.h
 /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/pico/stdio.h
@@ -526,6 +526,8 @@ pico/stdio_usb.h
 
 generated/pico_base/pico/config_autogen.h
 /home/ajh2/pico/pico-sdk/src/boards/include/boards/pico.h
+-
+/home/ajh2/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
 -
 
 generated/pico_base/pico/version.h

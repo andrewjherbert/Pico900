@@ -76,7 +76,7 @@ elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install: elf2uf2/src/ELF2UF2Build-st
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'ELF2UF2Build'"
-	/usr/bin/cmake -E make_directory /home/ajh2/pico/pico-sdk/tools/elf2uf2
+	/usr/bin/cmake -E make_directory /mnt/usbdrive1/pico/pico-sdk/tools/elf2uf2
 	/usr/bin/cmake -E make_directory /home/ajh2/pico/Pico900/build/elf2uf2
 	/usr/bin/cmake -E make_directory /home/ajh2/pico/Pico900/build/elf2uf2
 	/usr/bin/cmake -E make_directory /home/ajh2/pico/Pico900/build/elf2uf2/tmp
@@ -104,7 +104,7 @@ elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/tmp/ELF2UF2Build-
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'ELF2UF2Build'"
-	cd /home/ajh2/pico/Pico900/build/elf2uf2 && /usr/bin/cmake "-GUnix Makefiles" /home/ajh2/pico/pico-sdk/tools/elf2uf2
+	cd /home/ajh2/pico/Pico900/build/elf2uf2 && /usr/bin/cmake "-GUnix Makefiles" /mnt/usbdrive1/pico/pico-sdk/tools/elf2uf2
 	cd /home/ajh2/pico/Pico900/build/elf2uf2 && /usr/bin/cmake -E touch /home/ajh2/pico/Pico900/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure

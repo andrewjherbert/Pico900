@@ -53,8 +53,8 @@ CMAKE_BINARY_DIR = /home/ajh2/pico/Pico900/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/pico900.dir/all
 all: CMakeFiles/ELF2UF2Build.dir/all
+all: CMakeFiles/pico900.dir/all
 all: pico-sdk/all
 
 .PHONY : all
@@ -65,8 +65,8 @@ preinstall: pico-sdk/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/pico900.dir/clean
 clean: CMakeFiles/ELF2UF2Build.dir/clean
+clean: CMakeFiles/pico900.dir/clean
 clean: pico-sdk/clean
 
 .PHONY : clean
@@ -429,6 +429,7 @@ pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_adc/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_clocks/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_dma/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_divider/all
+pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_exception/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_flash/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_gpio/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/hardware_i2c/all
@@ -463,6 +464,7 @@ pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_printf/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_stdio/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_stdio_semihosting/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_stdio_uart/all
+pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/cmsis/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/tinyusb/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_stdio_usb/all
 pico-sdk/src/rp2_common/all: pico-sdk/src/rp2_common/pico_stdlib/all
@@ -480,6 +482,7 @@ pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_adc/preinst
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_clocks/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_dma/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_divider/preinstall
+pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_exception/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_flash/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_gpio/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/hardware_i2c/preinstall
@@ -514,6 +517,7 @@ pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_printf/preinsta
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_stdio/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_stdio_semihosting/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_stdio_uart/preinstall
+pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/cmsis/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/tinyusb/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_stdio_usb/preinstall
 pico-sdk/src/rp2_common/preinstall: pico-sdk/src/rp2_common/pico_stdlib/preinstall
@@ -531,6 +535,7 @@ pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_adc/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_clocks/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_dma/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_divider/clean
+pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_exception/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_flash/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_gpio/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/hardware_i2c/clean
@@ -565,6 +570,7 @@ pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_printf/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_stdio/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_stdio_semihosting/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_stdio_uart/clean
+pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/cmsis/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/tinyusb/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_stdio_usb/clean
 pico-sdk/src/rp2_common/clean: pico-sdk/src/rp2_common/pico_stdlib/clean
@@ -594,6 +600,24 @@ pico-sdk/src/rp2_common/boot_stage2/clean: pico-sdk/src/rp2_common/boot_stage2/C
 pico-sdk/src/rp2_common/boot_stage2/clean: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/clean
 
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/clean
+
+#=============================================================================
+# Directory level rules for directory pico-sdk/src/rp2_common/cmsis
+
+# Recursive "all" directory target.
+pico-sdk/src/rp2_common/cmsis/all:
+
+.PHONY : pico-sdk/src/rp2_common/cmsis/all
+
+# Recursive "preinstall" directory target.
+pico-sdk/src/rp2_common/cmsis/preinstall:
+
+.PHONY : pico-sdk/src/rp2_common/cmsis/preinstall
+
+# Recursive "clean" directory target.
+pico-sdk/src/rp2_common/cmsis/clean:
+
+.PHONY : pico-sdk/src/rp2_common/cmsis/clean
 
 #=============================================================================
 # Directory level rules for directory pico-sdk/src/rp2_common/hardware_adc
@@ -702,6 +726,24 @@ pico-sdk/src/rp2_common/hardware_dma/preinstall:
 pico-sdk/src/rp2_common/hardware_dma/clean:
 
 .PHONY : pico-sdk/src/rp2_common/hardware_dma/clean
+
+#=============================================================================
+# Directory level rules for directory pico-sdk/src/rp2_common/hardware_exception
+
+# Recursive "all" directory target.
+pico-sdk/src/rp2_common/hardware_exception/all:
+
+.PHONY : pico-sdk/src/rp2_common/hardware_exception/all
+
+# Recursive "preinstall" directory target.
+pico-sdk/src/rp2_common/hardware_exception/preinstall:
+
+.PHONY : pico-sdk/src/rp2_common/hardware_exception/preinstall
+
+# Recursive "clean" directory target.
+pico-sdk/src/rp2_common/hardware_exception/clean:
+
+.PHONY : pico-sdk/src/rp2_common/hardware_exception/clean
 
 #=============================================================================
 # Directory level rules for directory pico-sdk/src/rp2_common/hardware_flash
@@ -1460,34 +1502,6 @@ pico-sdk/tools/clean:
 .PHONY : pico-sdk/tools/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/pico900.dir
-
-# All Build rule for target.
-CMakeFiles/pico900.dir/all: CMakeFiles/ELF2UF2Build.dir/all
-CMakeFiles/pico900.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/all
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/depend
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79 "Built target pico900"
-.PHONY : CMakeFiles/pico900.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/pico900.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 78
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pico900.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 0
-.PHONY : CMakeFiles/pico900.dir/rule
-
-# Convenience name for target.
-pico900: CMakeFiles/pico900.dir/rule
-
-.PHONY : pico900
-
-# clean rule for target.
-CMakeFiles/pico900.dir/clean:
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/clean
-.PHONY : CMakeFiles/pico900.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/ELF2UF2Build.dir
 
 # All Build rule for target.
@@ -1513,6 +1527,34 @@ ELF2UF2Build: CMakeFiles/ELF2UF2Build.dir/rule
 CMakeFiles/ELF2UF2Build.dir/clean:
 	$(MAKE) -f CMakeFiles/ELF2UF2Build.dir/build.make CMakeFiles/ELF2UF2Build.dir/clean
 .PHONY : CMakeFiles/ELF2UF2Build.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pico900.dir
+
+# All Build rule for target.
+CMakeFiles/pico900.dir/all: CMakeFiles/ELF2UF2Build.dir/all
+CMakeFiles/pico900.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/all
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/depend
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82 "Built target pico900"
+.PHONY : CMakeFiles/pico900.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pico900.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 81
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pico900.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 0
+.PHONY : CMakeFiles/pico900.dir/rule
+
+# Convenience name for target.
+pico900: CMakeFiles/pico900.dir/rule
+
+.PHONY : pico900
+
+# clean rule for target.
+CMakeFiles/pico900.dir/clean:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/clean
+.PHONY : CMakeFiles/pico900.dir/clean
 
 #=============================================================================
 # Target rules for target pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir

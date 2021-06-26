@@ -109,22 +109,9 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/cla
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i: cmake_force
@@ -134,6 +121,19 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/plat
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c
@@ -309,31 +309,23 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/cl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building ASM object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c
@@ -361,23 +353,31 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building ASM object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
-	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_printf/printf.c
@@ -554,22 +554,9 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/pico900.dir/flags.make
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i: cmake_force
@@ -582,7 +569,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/res
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i: cmake_force
@@ -595,7 +582,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/std
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i: cmake_force
@@ -608,7 +595,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/std
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i: cmake_force
@@ -621,7 +608,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberr
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i: cmake_force
@@ -634,7 +621,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/portable/raspberr
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i: cmake_force
@@ -647,7 +634,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s: 
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i: cmake_force
@@ -660,7 +647,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_contr
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i: cmake_force
@@ -673,7 +660,7 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i: cmake_force
@@ -683,6 +670,19 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_dev
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj   -c /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj: CMakeFiles/pico900.dir/flags.make
 CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj: /home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
@@ -814,14 +814,53 @@ CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_us
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj: CMakeFiles/pico900.dir/flags.make
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj   -c /home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c > CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+
+CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c -o CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+
 # Object files for target pico900
 pico900_OBJECTS = \
 "CMakeFiles/pico900.dir/pico900.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/common/pico_time/time.c.obj" \
@@ -836,12 +875,12 @@ pico900_OBJECTS = \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/common/pico_util/queue.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj" \
@@ -861,7 +900,6 @@ pico900_OBJECTS = \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj" \
@@ -871,6 +909,7 @@ pico900_OBJECTS = \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj" \
@@ -880,7 +919,10 @@ pico900_OBJECTS = \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj" \
 "CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj" \
-"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj"
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj" \
+"CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj"
 
 # External object files for target pico900
 pico900_EXTERNAL_OBJECTS =
@@ -889,8 +931,8 @@ pico900.elf: CMakeFiles/pico900.dir/pico900.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/common/pico_time/time.c.obj
@@ -905,12 +947,12 @@ pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/common/pico_util
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/common/pico_util/queue.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
@@ -930,7 +972,6 @@ pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
@@ -940,6 +981,7 @@ pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/devi
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
@@ -950,10 +992,13 @@ pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/clas
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+pico900.elf: CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
 pico900.elf: CMakeFiles/pico900.dir/build.make
 pico900.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 pico900.elf: CMakeFiles/pico900.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Linking CXX executable pico900.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ajh2/pico/Pico900/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Linking CXX executable pico900.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pico900.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objcopy -Oihex pico900.elf pico900.hex
 	/usr/bin/arm-none-eabi-objcopy -Obinary pico900.elf pico900.bin

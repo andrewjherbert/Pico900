@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named pico900
-
-# Build rule for target.
-pico900: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pico900
-.PHONY : pico900
-
-# fast build rule for target.
-pico900/fast:
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/build
-.PHONY : pico900/fast
-
-#=============================================================================
 # Target rules for targets named ELF2UF2Build
 
 # Build rule for target.
@@ -135,6 +122,19 @@ ELF2UF2Build: cmake_check_build_system
 ELF2UF2Build/fast:
 	$(MAKE) -f CMakeFiles/ELF2UF2Build.dir/build.make CMakeFiles/ELF2UF2Build.dir/build
 .PHONY : ELF2UF2Build/fast
+
+#=============================================================================
+# Target rules for targets named pico900
+
+# Build rule for target.
+pico900: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pico900
+.PHONY : pico900
+
+# fast build rule for target.
+pico900/fast:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/build
+.PHONY : pico900/fast
 
 #=============================================================================
 # Target rules for targets named bs2_default
@@ -228,6 +228,33 @@ home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: home/ajh2/pico/p
 home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s:
 	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 .PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
+
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj: home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj
+
+# target to build an object file
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i
+
+# target to preprocess a source file
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
+
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s
+
+# target to generate assembly for a file
+home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
+.PHONY : home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 
 home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj: home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 
@@ -886,6 +913,33 @@ home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
 	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj: home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj
+
+# target to build an object file
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i: home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i
+
+# target to preprocess a source file
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s: home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s
+
+# target to generate assembly for a file
+home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+
 home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj
@@ -1399,6 +1453,33 @@ home/ajh2/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
 	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj: home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj
+
+# target to build an object file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i: home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i
+
+# target to preprocess a source file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s: home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s
+
+# target to generate assembly for a file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+
 home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj
@@ -1570,33 +1651,6 @@ home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
 	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
-
-# target to build an object file
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
-
-# target to preprocess a source file
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
-
-# target to generate assembly for a file
-home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
-	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
 home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj
@@ -1705,6 +1759,33 @@ home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
 	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj: home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj
+
+# target to build an object file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i
+
+# target to preprocess a source file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s
+
+# target to generate assembly for a file
+home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
+	$(MAKE) -f CMakeFiles/pico900.dir/build.make CMakeFiles/pico900.dir/home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+.PHONY : home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+
 pico900.obj: pico900.c.obj
 
 .PHONY : pico900.obj
@@ -1739,9 +1820,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... pico900"
 	@echo "... rebuild_cache"
 	@echo "... ELF2UF2Build"
+	@echo "... pico900"
 	@echo "... bs2_default"
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
@@ -1751,6 +1832,9 @@ help:
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s"
+	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj"
+	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i"
+	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i"
 	@echo "... home/ajh2/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s"
@@ -1824,6 +1908,9 @@ help:
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.s"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_divider/divider.obj"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
@@ -1881,6 +1968,9 @@ help:
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_platform/platform.s"
@@ -1900,9 +1990,6 @@ help:
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
-	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
-	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
-	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"
@@ -1915,6 +2002,9 @@ help:
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
+	@echo "... home/ajh2/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
 	@echo "... pico900.obj"
 	@echo "... pico900.i"
 	@echo "... pico900.s"
