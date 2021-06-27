@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 26/06/2021
+// Copyright (c) Andrew Herbert - 27/06/2021
 
 // MIT Licence.
 
@@ -239,18 +239,20 @@ uint32_t autostart_enabled = 0; // 0 = autostart after reset, 1 = run initial
 
 static jmp_buf jbuf;            // used by setjmp in main
 
-static uint64_t cycles = 0;     // used in diagnostics
-static uint32_t max_poll = 0;
+// counts for use in test monitoring
+static uint64_t cycles     = 0; 
+static uint32_t max_poll   = 0;
 static uint32_t monitoring = FALSE;
-static uint32_t glitches = 0;
+static uint32_t glitches   = 0;
 
   
 /**********************************************************/
 /*                         FUNCTIONS                      */
 /**********************************************************/
 
-static void     master();                      // master routine       
-static void     emulate(const uint32_t start); // run emulation from start
+static void     emulation();                   // 920M emulation       
+static void     jump_to(const uint32_t start); // start execution at start
+                                               // address
 static void     check_address(const uint32_t add);
                                                // check address is within
                                                // bounds 
@@ -279,10 +281,9 @@ static uint32_t get_pts_ch(uint32_t tty);      // read from paper tape station
 static void     put_pts_ch(uint32_t ch, uint32_t tty);
                                                // punch to paper tape station
 
-static void signals();
-static void reader_test(uint64_t max_cycles);                         
-static void punch_test(uint64_t max_cycles);
-static void monitor();
+static void reader_test(uint64_t max_cycles);  // test read requests
+static void punch_test(uint64_t max_cycles);   // test write requests
+static void monitor();                         // monitor test progress
 
 
 /**********************************************************/
@@ -291,6 +292,8 @@ static void monitor();
 
 int32_t main()
 {
+  int32_t fail_code; // failure type from longjmp
+  
   bi_decl(bi_program_description("Elliott 920M Emulator by Andrew Herbert"));
   
   stdio_init_all(); // initialise stdio
@@ -307,15 +310,8 @@ int32_t main()
   logging_enabled   = logging();     // print logging messages to usb?
   fast_enabled      = fast();        // run at maximum speed?
   autostart_enabled = autostart();   // autostart or initial orders
-  multicore_launch_core1(master);    // run emulation in core1
-  monitor();                         // monitor from core0
-}
 
-// main system runs in core1
-static void master()
-{
-  int32_t fail_code;
-  if ( logging_enabled )
+  if ( logging_enabled )             // confirm configuration
     {
       while ( !tud_cdc_connected() ) // wait for usb to wake up
 	sleep_ms(500);
@@ -329,11 +325,7 @@ static void master()
       else
 	printf("Initial instructions\n");
     }
-   
-  if ( logging_enabled ) printf("Waiting for power (-NOPOWER)\n");
-  wait_for_power_on();
-  if ( logging_enabled ) printf("Power on\n");
-	
+  	
   // long jump to here on error
   if ( fail_code = setjmp(jbuf) ) // test if a longjmp occurred
     {
@@ -351,22 +343,17 @@ static void master()
 	    }
 	}
     }
-
-  // run emulation
-  while ( TRUE )
-    {
-      glitches = 0; // reset glitch counter
-      punch_test(10000000);
-      sleep_ms(1);
-      glitches = 0; // reset glitch counter
-      reader_test(10000000);
-    }
-  longjmp(jbuf, EXIT_FAIL); // STOP HERE
-  load_initial_instructions();
-  emulate(8181); // run emulation starting at location 8181
-  longjmp(jbuf, EXIT_FAIL); // in principle emulate never returns...
-    
+  multicore_launch_core1(emulation);    // run emulation in core1
+  monitor(); // monitor until failure
+  longjmp(jbuf, EXIT_FAIL);
+  /* NOT REACHED */
 }
+
+
+/**********************************************************/
+/*                         TESTING                        */
+/**********************************************************/
+
 
 /* The following  test routines are only for use during the development phase 
 of pico900.  They will not be used in the operational
@@ -436,15 +423,39 @@ static inline void monitor()
       glitches = 0;
     }
 }
-	    
+
 
 /**********************************************************/
 /*                         EMULATION                      */
 /**********************************************************/
 
-/* 900 series emulator */
+/* 900 series emulation */
 
-void emulate (const uint32_t start) {
+static void emulation()
+{    
+  if ( logging_enabled ) printf("Waiting for power (-NOPOWER)\n");
+  wait_for_power_on();
+  if ( logging_enabled ) printf("Power on\n");
+
+  // run tests
+  while ( TRUE )
+    {
+      glitches = 0; // reset glitch counter
+      punch_test(10000000);
+      sleep_ms(1);
+      glitches = 0; // reset glitch counter
+      reader_test(10000000);
+    }
+
+  load_initial_instructions();
+  jump_to(autostart() ? 8177 : 8181); // run emulation starting at location 8181
+  longjmp(jbuf, EXIT_FAIL); // in principle emulate never returns...
+  /* NOT REACHED */
+}
+
+/* execute program in store from start address */
+
+static void jump_to (const uint32_t start) {
 
   static uint32_t a_reg  = 0;
   static uint32_t q_reg  = 0;
@@ -912,9 +923,4 @@ static inline void wait_for_no_ack()
 	/* NOT REACHED */
       }
   }
-}
-
-static void signals()
-{
-  printf("NOPOWER %d ACK %d\n", no_power(), ack());
 }
