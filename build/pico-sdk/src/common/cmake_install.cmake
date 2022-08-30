@@ -1,4 +1,4 @@
-# Install script for directory: /home/ajh2/pico/pico-sdk/src/common
+# Install script for directory: /home/ajh2/home/pico/pico-sdk/src/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,6 +37,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/boot_picoboot/cmake_install.cmake")
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/boot_uf2/cmake_install.cmake")
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/pico_base/cmake_install.cmake")
+  include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/pico_usb_reset_interface/cmake_install.cmake")
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/pico_bit_ops/cmake_install.cmake")
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/pico_binary_info/cmake_install.cmake")
   include("/home/ajh2/pico/Pico900/build/pico-sdk/src/common/pico_divider/cmake_install.cmake")

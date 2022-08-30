@@ -1,4 +1,4 @@
-# Install script for directory: /home/ajh2/pico/pico-sdk/src/common/pico_binary_info
+# Install script for directory: /home/ajh2/home/pico/pico-sdk/src/common/pico_binary_info
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ajh2/pico/pico-sdk/src/rp2_common/pico_multicore
+# Install script for directory: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

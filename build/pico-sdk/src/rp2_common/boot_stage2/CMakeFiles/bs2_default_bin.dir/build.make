@@ -76,6 +76,6 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean:
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend:
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ajh2/pico/Pico900 /home/ajh2/pico/pico-sdk/src/rp2_common/boot_stage2 /home/ajh2/pico/Pico900/build /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2 /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ajh2/pico/Pico900 /home/ajh2/home/pico/pico-sdk/src/rp2_common/boot_stage2 /home/ajh2/pico/Pico900/build /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2 /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend
 
