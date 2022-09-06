@@ -15,8 +15,8 @@ target_link_libraries(pico900
   pico_stdlib
   pico_multicore)
 
-pico_enable_stdio_usb(pico900 1)
-pico_enable_stdio_uart(pico900 0)
+pico_enable_stdio_usb(pico900 0)
+pico_enable_stdio_uart(pico900 1)
 
 pico_add_extra_outputs(pico900)
 
