@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 06/09/2022
+// Copyright (c) Andrew Herbert - 07/09/2022
 
 // MIT Licence.
 
@@ -586,13 +586,14 @@ static inline void check_address(const uint32_t m)
 static  uint32_t get_pts_ch(const uint32_t tty) {
   uint64_t start = time_us_64();
   uint32_t ch, request = RDRREQ_BIT | ( tty ? TTYSEL_BIT : 0 );
+  printf("R\n");
   gpio_put_masked(REQUEST_BITS, request);
   wait_for_ack();
   ch = (gpio_get_all() >> RDR_1_PIN) & 255; // read 8 bits
   gpio_put_masked(REQUEST_BITS, 0);
   wait_for_no_ack();
   // no wait here - assume INSTRUCTION_TIME > duration of ACK
-  //printf("R%3d\n", ch);
+  printf("R%3d\n", ch);
   return ch;
 }
 
@@ -603,7 +604,7 @@ static void put_pts_ch(const uint32_t ch, const uint32_t tty)
   uint64_t start = time_us_64();
   uint32_t request =  PUNREQ_BIT | ( tty ? TTYSEL_BIT : 0 )
                            | (ch << PUN_1_PIN);
-  // printf("P %3d\n", ch);
+  printf("P %3d\n", ch);
   gpio_put_masked(REQUEST_BITS | PUN_PINS_MASK, request);
   wait_for_ack();
   gpio_put_masked(REQUEST_BITS, 0);
