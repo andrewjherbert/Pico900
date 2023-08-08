@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 07/09/2022
+// Copyright (c) Andrew Herbert - 08/08/2023
 
 // MIT Licence.
 
@@ -26,7 +26,7 @@
 // quantities so there is no saving of memory, just a reminder of
 // the size of these types of data.
 
-// The Pico emulates the paper tape station  interface of a 920M 
+// The Pico emulates the paper tape station interface of a 920M 
 // using GPIO pins.  The pin numbers are listed below.  The use 
 // of each pin is as follows:
 //
@@ -58,7 +58,7 @@
 //
 // NOPOWER_PIN, high signals that the computer should stop
 // execution and enter a reset state.  Low signals that
-// the computer whould wake up if in the reset state and
+// the computer should wake up  in a fully reset state and
 // execute an autostart or initial instructions as determined
 // by II_AUTO.  NOPOWER should remain low so that the computer
 // can continue to execute until next reset by raising NOPOWER
@@ -70,20 +70,12 @@
 // These two pins are only read at the start of an emulation.
 // If it is desired to change these parameters the Pico must
 // be restarted either by removing, then replacing the USB power
-// cable, or using the  button provided for this purpose.
+// cable, or using the button provided for this purpose.
 //
 // The onboard LED (LED_PIN) is used to signal emulation status.
-// Immediately after loaded the LED is flashed 4 times to
-// signal the emulation is ready to start.  When in the NOPOWER
-// state the LED is extinguished.  When running the LED flashes
-// every 2.5 seconds.when an emulation is running.  The LED is
-// extinguished if the machine is halted by a FAIL or NOPWER
-
-// The Pico is equipped with a push button which can used used
-// to force a restart of the Pico system.  This completely
-// restarts the emulation system from the beginning.  It can be
-// used to restart after a dynamic stop, infinite loop or
-// catastrophic error.
+// A regular one second flash indicates emulation is running.
+// A fast 0.25 second flash indicates halted after an internal
+// error.
 
 
 /**********************************************************/
@@ -203,6 +195,14 @@ const char *error_messages[]  =
                             // practical minimum.
 #define ACK_TIME          2 // shouldset to be identical to ACK_TIME in PTS
 
+// The following are the periods for flashing the LED in various states
+#define SLOW_BLINK_TIME  1000 // executing instructions
+#define FAST_BLINK_TIME   250 // error occurred
+
+#define NO_BLINK       0
+#define SLOW_BLINK   250
+#define FAST_BLINK  1000
+
 
 /**********************************************************/
 /*                         GLOBALS                        */
@@ -228,12 +228,15 @@ uint32_t out_pins_mask = 0;
 
 static jmp_buf jbuf;            // used by setjmp in main
 
+static uint32_t blink = NO_BLINK;
+
   
 /**********************************************************/
 /*                         FUNCTIONS                      */
 /**********************************************************/
 
-static void     emulation();                   // emulator
+static void     e920m_emulation();             // emulator
+static void     blinker();                     // status indicator
 static void     jump_to(const uint32_t start); // start execution at start
                                                // address
 static void     check_address(const uint32_t add);
@@ -244,8 +247,7 @@ static uint32_t make_instruction(const uint32_t m, const uint32_t f,
 				 const uint32_t a);
                                                // assemble an instruction
 static void     setup_gpios();                 // initialize GPIO interface 
-static void     led_on();                      // turn onboard LED on
-static void     led_off();                     // turn onboard LED off
+static void     led_toggle();                  // toggle onboard LED
                                                // signal emulation hung on
                                                // machine fault
 static uint32_t logging();                     // TRUE is logging enabled
@@ -254,6 +256,7 @@ static uint32_t autostart();                   // TRUE if AUTOSTART, otherwise
 static uint32_t no_power();                    // TRUE if power off
                                                // (NOPOWER TRUE)
 static void     wait_for_power_on();           // wait for NOPOWER LOW
+static void     wait_for_power_off();          // wait for NOPOWER HIGH
 static void     wait_for_ack();                // wait for ACK HIGH
 static void     wait_for_no_ack();             // wait for ACK LOW
 static uint32_t get_pts_ch(uint32_t tty);      // read from paper tape station
@@ -271,8 +274,8 @@ int32_t main()
   
   stdio_init_all(); // initialise stdio
   setup_gpios();    // configure interface to outside world
-  led_off();  
-  emulation();      // run tests and emulation
+  multicore_launch_core1(blinker); // set LED blinker running
+  e920m_emulation(); // run emulation
  }
 
 
@@ -282,15 +285,13 @@ int32_t main()
 
 /* 900 series emulation */
 
-static void emulation()
+static void e920m_emulation()
 {
   int32_t fail_code;
   
   // long jump to here on error
   if ( fail_code = setjmp(jbuf) ) { // test if a longjmp occurred
-
-    // clear any transfers and LED
-    gpio_put_masked(REQUEST_BITS | LED_BIT, 0); 
+    gpio_put_masked(REQUEST_BITS, 0); // clear any transfers
 
     if ( (fail_code == NOPOWER_FAIL) & logging() )
       printf("Pico900 - Restarting after NOPOWER\n");
@@ -298,7 +299,8 @@ static void emulation()
     else if ( logging() ) {
        printf("Pico900 - Halted after error %s\n",
 	      error_messages[fail_code-1]);
-       while ( no_power() ) sleep_ms(1);
+       blink = FAST_BLINK; // signal in error state
+       wait_for_power_on(); // only restart after power cycle
     }
   }
 
@@ -309,9 +311,13 @@ static void emulation()
 	   : "Pico900 - Initial instructions selected");
   }
 
-  wait_for_power_on(); // -NOPOWER from PTS signals start execution
+  
   if ( !autostart() ) load_initial_instructions();
-  led_on();
+
+  wait_for_power_on(); // -NOPOWER from PTS signals start execution
+
+  blink = SLOW_BLINK; // signal execution starting
+
   jump_to(autostart() ? 8177 : 8181); // start location depends on II_AUTO
   /* NOT REACHED */
 }
@@ -586,14 +592,14 @@ static inline void check_address(const uint32_t m)
 static  uint32_t get_pts_ch(const uint32_t tty) {
   uint64_t start = time_us_64();
   uint32_t ch, request = RDRREQ_BIT | ( tty ? TTYSEL_BIT : 0 );
-  // printf("R\n");
   gpio_put_masked(REQUEST_BITS, request);
   wait_for_ack();
   ch = (gpio_get_all() >> RDR_1_PIN) & 255; // read 8 bits
   gpio_put_masked(REQUEST_BITS, 0);
   wait_for_no_ack();
   // no wait here - assume INSTRUCTION_TIME > duration of ACK
-  // printf("R%3d\n", ch);
+  if ( logging() )
+    printf("R%3d\n", ch);
   return ch;
 }
 
@@ -604,7 +610,8 @@ static void put_pts_ch(const uint32_t ch, const uint32_t tty)
   uint64_t start = time_us_64();
   uint32_t request =  PUNREQ_BIT | ( tty ? TTYSEL_BIT : 0 )
                            | (ch << PUN_1_PIN);
-  // printf("P %3d\n", ch);
+  if ( logging() )
+    printf("P %3d\n", ch);
   gpio_put_masked(REQUEST_BITS | PUN_PINS_MASK, request);
   wait_for_ack();
   gpio_put_masked(REQUEST_BITS, 0);
@@ -673,20 +680,6 @@ static void setup_gpios()
   gpio_pull_down(II_AUTO_PIN);
 }
 
-/* LED blinking */
-
-static inline void led_on()
-{
-  gpio_put(LED_PIN, 1);
-}
-
-static inline void led_off()
-{
-  gpio_put(LED_PIN, 0);
-}
-
-/* Read status pins */
-
 static inline uint32_t autostart()
 {
   return gpio_get(II_AUTO_PIN);
@@ -718,6 +711,19 @@ static inline void wait_for_power_on()
   if ( logging() ) printf("Pico900 - NOPOWER LOW detected\n");
 }
 
+static inline void wait_for_power_off()
+{
+  if ( logging() ) printf("Pico900 - Waiting for NOPOWER HIGH\n");
+  while ( TRUE ) { 
+    if ( no_power() ) {
+      break;
+    } else {
+      sleep_ms(1);
+    }
+  }
+  if ( logging() ) printf("Pico900 - NOPOWER HIGH detected\n");
+}
+
 /* Wait for ACK to be 1  */
 
 static inline void wait_for_ack()
@@ -741,3 +747,26 @@ static inline void wait_for_no_ack()
     }
   }
 }
+
+/**********************************************************/
+/*                          BLINKER                       */
+/**********************************************************/
+
+static inline void blinker()
+{
+  static uint32_t led_state = 0;
+  while (TRUE)
+    if ( blink == NO_BLINK) {
+      if ( led_state ) {
+	led_state = 0;
+	gpio_put(LED_PIN, 0);
+      sleep_ms(100);
+      }
+    }
+    else {
+      led_state = (led_state+1)&1;
+      gpio_put(LED_PIN, led_state);
+      sleep_ms(blink);
+    }
+}
+      
