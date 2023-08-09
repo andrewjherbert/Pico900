@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ajh2/pico/Pico900
+CMAKE_SOURCE_DIR = /home/ajh2/home/pico/Pico900
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ajh2/pico/Pico900/build
+CMAKE_BINARY_DIR = /home/ajh2/home/pico/Pico900/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/pico_lwip/CMakeFiles/progress.marks
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 0
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/home/pico/Pico900/build/CMakeFiles /home/ajh2/home/pico/Pico900/build/pico-sdk/src/rp2_common/pico_lwip/CMakeFiles/progress.marks
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/home/pico/Pico900/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/clean
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/preinstall
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/preinstall
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_lwip/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

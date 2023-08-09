@@ -32,6 +32,7 @@ CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/asm_helper.S
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: generated/pico_base/pico/version.h
@@ -183,6 +184,7 @@ CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/asm_helper.S
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: generated/pico_base/pico/config_autogen.h
@@ -688,15 +690,22 @@ CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/d
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/assert.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/config.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/error.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/types.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/include/pico/double.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: generated/pico_base/pico/config_autogen.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: generated/pico_base/pico/version.h
 
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
@@ -715,15 +724,22 @@ CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/fl
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/assert.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/config.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/error.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/types.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/include/pico/float.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: generated/pico_base/pico/config_autogen.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: generated/pico_base/pico/version.h
 
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
@@ -992,6 +1008,7 @@ CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/s
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/pico900.dir/pico900.c.obj: ../pico900.c
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/assert.h
@@ -1036,9 +1053,21 @@ CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_comm
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h
 CMakeFiles/pico900.dir/pico900.c.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h
-CMakeFiles/pico900.dir/pico900.c.obj: ../pico900.c
 CMakeFiles/pico900.dir/pico900.c.obj: generated/pico_base/pico/config_autogen.h
 CMakeFiles/pico900.dir/pico900.c.obj: generated/pico_base/pico/version.h
 
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/assert.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/config.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/error.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico/types.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h
 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: generated/pico_base/pico/config_autogen.h
+CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: generated/pico_base/pico/version.h
 

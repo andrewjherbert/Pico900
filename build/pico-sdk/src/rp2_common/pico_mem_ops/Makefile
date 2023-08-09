@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ajh2/pico/Pico900
+CMAKE_SOURCE_DIR = /home/ajh2/home/pico/Pico900
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ajh2/pico/Pico900/build
+CMAKE_BINARY_DIR = /home/ajh2/home/pico/Pico900/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +67,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles /home/ajh2/pico/Pico900/build/pico-sdk/src/rp2_common/pico_mem_ops/CMakeFiles/progress.marks
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/pico/Pico900/build/CMakeFiles 0
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/home/pico/Pico900/build/CMakeFiles /home/ajh2/home/pico/Pico900/build/pico-sdk/src/rp2_common/pico_mem_ops/CMakeFiles/progress.marks
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajh2/home/pico/Pico900/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/clean
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/preinstall
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ajh2/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/preinstall
+	cd /home/ajh2/home/pico/Pico900/build && $(MAKE) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_mem_ops/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -116,8 +116,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 .PHONY : help
 
 
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ajh2/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ajh2/home/pico/Pico900/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

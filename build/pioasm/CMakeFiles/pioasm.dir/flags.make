@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wno-psabi -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ajh2/pico/pico-sdk/tools/pioasm -I/home/ajh2/pico/pico-sdk/tools/pioasm/gen 
+CXX_INCLUDES = -I/home/ajh2/home/pico/pico-sdk/tools/pioasm -I/home/ajh2/home/pico/pico-sdk/tools/pioasm/gen 
 

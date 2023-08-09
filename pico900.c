@@ -196,12 +196,11 @@ const char *error_messages[]  =
 #define ACK_TIME          2 // shouldset to be identical to ACK_TIME in PTS
 
 // The following are the periods for flashing the LED in various states
-#define SLOW_BLINK_TIME  1000 // executing instructions
-#define FAST_BLINK_TIME   250 // error occurred
 
 #define NO_BLINK       0
-#define SLOW_BLINK   250
-#define FAST_BLINK  1000
+#define RAPID_BLINK  250
+#define FAST_BLINK   500
+#define SLOW_BLINK  1000
 
 
 /**********************************************************/
@@ -228,7 +227,7 @@ uint32_t out_pins_mask = 0;
 
 static jmp_buf jbuf;            // used by setjmp in main
 
-static uint32_t blink = NO_BLINK;
+static volatile uint32_t blink = NO_BLINK;
 
   
 /**********************************************************/
@@ -274,6 +273,7 @@ int32_t main()
   
   stdio_init_all(); // initialise stdio
   setup_gpios();    // configure interface to outside world
+  sleep_us(250);
   multicore_launch_core1(blinker); // set LED blinker running
   e920m_emulation(); // run emulation
  }
@@ -304,6 +304,8 @@ static void e920m_emulation()
     }
   }
 
+  blink = NO_BLINK;
+
   if ( logging() ) {
     printf("Pico900 - Starting\n%s\n",
 	   ( autostart() )
@@ -311,7 +313,6 @@ static void e920m_emulation()
 	   : "Pico900 - Initial instructions selected");
   }
 
-  
   if ( !autostart() ) load_initial_instructions();
 
   wait_for_power_on(); // -NOPOWER from PTS signals start execution
@@ -592,11 +593,13 @@ static inline void check_address(const uint32_t m)
 static  uint32_t get_pts_ch(const uint32_t tty) {
   uint64_t start = time_us_64();
   uint32_t ch, request = RDRREQ_BIT | ( tty ? TTYSEL_BIT : 0 );
+  blink = RAPID_BLINK;
   gpio_put_masked(REQUEST_BITS, request);
   wait_for_ack();
   ch = (gpio_get_all() >> RDR_1_PIN) & 255; // read 8 bits
   gpio_put_masked(REQUEST_BITS, 0);
   wait_for_no_ack();
+  blink = SLOW_BLINK;
   // no wait here - assume INSTRUCTION_TIME > duration of ACK
   if ( logging() )
     printf("R%3d\n", ch);
@@ -612,10 +615,12 @@ static void put_pts_ch(const uint32_t ch, const uint32_t tty)
                            | (ch << PUN_1_PIN);
   if ( logging() )
     printf("P %3d\n", ch);
+  blink = RAPID_BLINK;
   gpio_put_masked(REQUEST_BITS | PUN_PINS_MASK, request);
   wait_for_ack();
   gpio_put_masked(REQUEST_BITS, 0);
   wait_for_no_ack();
+  blink = SLOW_BLINK;
   // no wait here - assume INSTRUCTION_TIME > duration of ACK
 }
 
@@ -755,17 +760,16 @@ static inline void wait_for_no_ack()
 static inline void blinker()
 {
   static uint32_t led_state = 0;
+  if ( logging() )
   while (TRUE)
-    if ( blink == NO_BLINK) {
-      if ( led_state ) {
-	led_state = 0;
-	gpio_put(LED_PIN, 0);
-      sleep_ms(100);
-      }
+    if ( blink == NO_BLINK ) {
+      led_state = 0;
+      gpio_put(LED_PIN, 0);
+      sleep_ms(RAPID_BLINK);
     }
-    else {
-      led_state = (led_state+1)&1;
-      gpio_put(LED_PIN, led_state);
+    else {	
+      led_state += 1;
+      gpio_put(LED_PIN, led_state%2);
       sleep_ms(blink);
     }
 }

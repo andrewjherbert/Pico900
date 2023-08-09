@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/ajh2/home/pico/Pico900/pico900.c
+stdio.h
+-
+inttypes.h
+-
+pico/stdlib.h
+/home/ajh2/home/pico/Pico900/pico/stdlib.h
+hardware/gpio.h
+/home/ajh2/home/pico/Pico900/hardware/gpio.h
+pico/binary_info.h
+/home/ajh2/home/pico/Pico900/pico/binary_info.h
+pico/multicore.h
+/home/ajh2/home/pico/Pico900/pico/multicore.h
+setjmp.h
+-
+
 /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h
 
 /home/ajh2/home/pico/pico-sdk/src/common/pico_base/include/pico.h
@@ -257,22 +273,6 @@ pico/stdio.h
 /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/pico/stdio.h
 hardware/uart.h
 /home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/hardware/uart.h
-
-/home/ajh2/pico/Pico900/pico900.c
-stdio.h
--
-inttypes.h
--
-pico/stdlib.h
-/home/ajh2/pico/Pico900/pico/stdlib.h
-hardware/gpio.h
-/home/ajh2/pico/Pico900/hardware/gpio.h
-pico/binary_info.h
-/home/ajh2/pico/Pico900/pico/binary_info.h
-pico/multicore.h
-/home/ajh2/pico/Pico900/pico/multicore.h
-setjmp.h
--
 
 generated/pico_base/pico/config_autogen.h
 /home/ajh2/home/pico/pico-sdk/src/boards/include/boards/pico.h

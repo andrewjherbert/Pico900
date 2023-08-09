@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.10.17-v7l+")
+set(CMAKE_HOST_SYSTEM "Linux-5.10.103-v7l+")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.10.17-v7l+")
+set(CMAKE_HOST_SYSTEM_VERSION "5.10.103-v7l+")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "armv7l")
 
-include("/home/ajh2/pico/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
+include("/home/ajh2/home/pico/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
 
 set(CMAKE_SYSTEM "PICO")
 set(CMAKE_SYSTEM_NAME "PICO")

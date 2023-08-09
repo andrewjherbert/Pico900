@@ -88,7 +88,7 @@ Discarded input sections
  .text.set_sys_clock_pll
                 0x00000000       0x78 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .text.check_sys_clock_khz
-                0x00000000      0x170 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+                0x00000000      0x160 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .text.setup_default_uart
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .comment       0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -151,6 +151,11 @@ Discarded input sections
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .bss.raw_irq_mask
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .text.rp2040_chip_version
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
@@ -164,11 +169,6 @@ Discarded input sections
                 0x00000000       0x9c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .text.hw_claim_clear
                 0x00000000       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .text.rp2040_chip_version
-                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
@@ -207,15 +207,15 @@ Discarded input sections
  .text.irq_get_priority
                 0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.user_irq_claim
-                0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.user_irq_unclaim
-                0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.user_irq_claim_unused
-                0x00000000       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.user_irq_is_claimed
-                0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.user_irq_claimed
-                0x00000000        0x2 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.user_irq_claim.str1.4
                 0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.user_irq_claim_unused.str1.4
@@ -232,9 +232,9 @@ Discarded input sections
  .time_critical.sem_acquire_blocking
                 0x00000000       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
  .time_critical.sem_acquire_timeout_ms
-                0x00000000       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
+                0x00000000       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
  .time_critical.sem_acquire_timeout_us
-                0x00000000       0x78 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
+                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
  .time_critical.sem_acquire_block_until
                 0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
  .time_critical.sem_try_acquire
@@ -249,6 +249,43 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.mutex_enter_blocking
+                0x00000000       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_enter_blocking
+                0x00000000       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.mutex_try_enter
+                0x00000000       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_try_enter
+                0x00000000       0x54 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.mutex_enter_timeout_ms
+                0x00000000       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_enter_timeout_ms
+                0x00000000       0x98 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.mutex_enter_timeout_us
+                0x00000000       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_enter_timeout_us
+                0x00000000       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.mutex_enter_block_until
+                0x00000000       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_enter_block_until
+                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .time_critical.recursive_mutex_exit
+                0x00000000       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .text.critical_section_init
+                0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .text.critical_section_init_with_lock_num
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .text.critical_section_deinit
+                0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .comment       0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .ARM.attributes
+                0x00000000       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
@@ -259,23 +296,27 @@ Discarded input sections
  .text.alarm_pool_get_default
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_create
-                0x00000000       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.alarm_pool_create_with_unused_hardware_alarm
+                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_destroy
                 0x00000000       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_add_alarm_at
-                0x00000000      0x1ac CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000      0x19c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.alarm_pool_add_alarm_at_force_in_context
+                0x00000000      0x118 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_cancel_alarm
-                0x00000000       0x70 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_hardware_alarm_num
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.alarm_pool_core_num
+                0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_add_repeating_timer_us
-                0x00000000      0x200 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000      0x1fc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.cancel_repeating_timer
                 0x00000000       0x84 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_dump
                 0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.best_effort_wfe_or_timeout
-                0x00000000      0x1b4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.alarm_pool_dump_key.str1.4
                 0x00000000        0xf CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.at_the_end_of_time
@@ -292,7 +333,7 @@ Discarded input sections
  .text.init_single_timeout_until
                 0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
  .text.init_per_iteration_timeout_us
-                0x00000000       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+                0x00000000       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
  .comment       0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
  .ARM.attributes
                 0x00000000       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -303,12 +344,16 @@ Discarded input sections
                 0x00000000       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_is_claimed
                 0x00000000       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .text.hardware_alarm_claim_unused
+                0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_us_32
                 0x00000000       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .text.busy_wait_us
-                0x00000000       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_ms
                 0x00000000       0x94 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .text.hardware_alarm_force_irq
+                0x00000000       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .rodata.hardware_alarm_claim_unused.str1.4
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/datetime.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/datetime.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/datetime.c.obj
@@ -365,80 +410,23 @@ Discarded input sections
  .comment       0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/queue.c.obj
  .ARM.attributes
                 0x00000000       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/queue.c.obj
- .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_enter_blocking
-                0x00000000       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_try_enter
-                0x00000000       0x54 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.mutex_enter_timeout_ms
-                0x00000000       0x98 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_enter_timeout_ms
-                0x00000000       0xac CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.mutex_enter_timeout_us
-                0x00000000       0x84 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_enter_timeout_us
-                0x00000000       0x90 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.mutex_enter_block_until
-                0x00000000       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_enter_block_until
-                0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .time_critical.recursive_mutex_exit
-                0x00000000       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .text.critical_section_init
-                0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .text.critical_section_init_with_lock_num
-                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .text.critical_section_deinit
-                0x00000000       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .comment       0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .ARM.attributes
-                0x00000000       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_deinit
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_set_baudrate
-                0x00000000       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x00000000       0xb0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .text.uart_set_format
+                0x00000000       0x7c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .text.uart_set_fifo_enabled
+                0x00000000       0x64 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .text.uart_set_break
+                0x00000000       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_set_translate_crlf
                 0x00000000       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_is_readable_within_us
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .text.hw_divider_divmod_s32
-                0x00000000       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .text.hw_divider_divmod_u32
-                0x00000000       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .text.hw_divider_save_state
-                0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .text.hw_divider_restore_state
-                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .ARM.attributes
-                0x00000000       0x22 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
- .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .text.runtime_install_stack_guard
-                0x00000000       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .text._exit    0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .text._sbrk    0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .text.__assert_func
-                0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .text.panic_unsupported
-                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .bss.heap_end.5812
-                0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata.__assert_func.str1.4
-                0x00000000       0x43 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata.panic_unsupported.str1.4
-                0x00000000        0xe CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
@@ -447,17 +435,17 @@ Discarded input sections
  .text.clock_stop
                 0x00000000       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .text.clock_configure
-                0x00000000      0x144 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000000      0x10c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .text.clock_set_reported_hz
                 0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .text.frequency_count_khz
                 0x00000000       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .text.clocks_enable_resus
                 0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .text.clock_gpio_init
+ .text.clock_gpio_init_int_frac
                 0x00000000       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .text.clock_configure_gpin
-                0x00000000      0x108 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000000      0x10c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss._resus_callback
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .rodata.gpin0_src
@@ -501,6 +489,46 @@ Discarded input sections
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .text.xosc_dormant
                 0x00000000       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text.hw_divider_divmod_s32
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text.hw_divider_divmod_u32
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text.hw_divider_divmod_return
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text.hw_divider_save_state
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text.hw_divider_restore_state
+                0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .ARM.attributes
+                0x00000000       0x22 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+ .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text.runtime_install_stack_guard
+                0x00000000       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text._sbrk    0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text._gettimeofday
+                0x00000000       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text.settimeofday
+                0x00000000       0x5c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text._times   0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text._getpid  0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text._kill    0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text.__assert_func
+                0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .text.panic_unsupported
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .bss.epoch_time_us_since_boot
+                0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .bss.heap_end.6363
+                0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .rodata.__assert_func.str1.4
+                0x00000000       0x43 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .rodata.panic_unsupported.str1.4
+                0x00000000        0xe CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
@@ -762,7 +790,7 @@ Discarded input sections
                 0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  .text.__wrap___aeabi_f2d
                 0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .text.__wrap_srqtf
+ .text.__wrap_sqrtf
                 0x00000000       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  .text.__wrap_cosf
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
@@ -886,6 +914,7 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .text.aeabi_memset_memcpy
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .text.memset   0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -910,25 +939,32 @@ Discarded input sections
  .text.stdio_out_chars_no_crlf
                 0x00000000       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdout_serialize_begin
-                0x00000000       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000000       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdout_serialize_end
                 0x00000000       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.putchar_raw
-                0x00000000       0xa0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000000       0x94 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.puts_raw
-                0x00000000       0xe8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000000       0xdc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text._read    0x00000000       0x94 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .text._write   0x00000000       0xb0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._write   0x00000000       0xa8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._open    0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._close   0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._lseek   0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._fstat   0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._isatty  0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_flush
                 0x00000000       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_getchar
                 0x00000000       0x74 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.getchar_timeout_us
-                0x00000000       0xa0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000000       0x98 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_filter_driver
                 0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_set_translate_crlf
                 0x00000000       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text.stdio_set_chars_available_callback
+                0x00000000       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
@@ -937,22 +973,22 @@ Discarded input sections
  .text.stdin_uart_init
                 0x00000000       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_init_full
-                0x00000000       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr49
+                0x00000000       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .binary_info.__bi_ptr54
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr53
+ .binary_info.__bi_ptr58
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr61
+ .binary_info.__bi_ptr66
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr65
+ .binary_info.__bi_ptr70
                 0x00000000        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_49.4829
+ .rodata.__bi_54.4846
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_53.4833
+ .rodata.__bi_58.4850
                 0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_61.4839
+ .rodata.__bi_66.4856
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_65.4843
+ .rodata.__bi_70.4860
                 0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
@@ -960,38 +996,40 @@ Discarded input sections
  .time_critical.multicore_lockout_handler
                 0x00000000       0x5c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_handshake
-                0x00000000      0x108 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0xf8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_fifo_push_blocking
                 0x00000000       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_fifo_push_timeout_us
-                0x00000000       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x5c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_fifo_pop_blocking
                 0x00000000       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_fifo_pop_timeout_us
-                0x00000000       0x64 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x5c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_reset_core1
                 0x00000000       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_launch_core1_with_stack
-                0x00000000       0xa4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- .text.multicore_launch_core1_raw
-                0x00000000       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_victim_init
-                0x00000000       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_start_timeout_us
-                0x00000000       0x98 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x84 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_start_blocking
                 0x00000000       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_end_timeout_us
-                0x00000000       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x00000000       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.multicore_lockout_end_blocking
                 0x00000000       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+ .text.multicore_lockout_victim_is_initialized
+                0x00000000        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .bss.lockout_in_progress
                 0x00000000        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .bss.lockout_mutex
                 0x00000000        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- .text          0x00000000        0x0 /tmp/ccGV3Bql.o
- .data          0x00000000        0x0 /tmp/ccGV3Bql.o
- .bss           0x00000000        0x0 /tmp/ccGV3Bql.o
+ .bss.lockout_victim_initialized
+                0x00000000        0x2 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+ .text          0x00000000        0x0 /tmp/ccAPnzEQ.o
+ .data          0x00000000        0x0 /tmp/ccAPnzEQ.o
+ .bss           0x00000000        0x0 /tmp/ccAPnzEQ.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_lshrdi3.o)
@@ -1261,11 +1299,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccGV3Bql.o
+ .boot2         0x10000000      0x100 /tmp/ccAPnzEQ.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x5d50
+.text           0x10000100     0x60c8
                 0x10000100                __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1318,354 +1356,365 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
                 0x100001d4       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
                 0x100001e8                __binary_info_header_end = .
  *(.reset)
- .reset         0x100001e8       0xa8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .reset         0x100001e8       0xa0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
                 0x100001e8                _entry_point
-                0x10000266                __get_current_exception
- .reset         0x10000290       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .reset         0x10000288       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.init)
- .init          0x100002c0        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
-                0x100002c0                _init
+ .init          0x100002b8        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
+                0x100002b8                _init
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .text*)
- .text          0x100002c4       0x98 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
- .text.blinker  0x1000035c       0x4c CMakeFiles/pico900.dir/pico900.c.obj
+ .text          0x100002bc       0x98 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+ .text.blinker  0x10000354       0x50 CMakeFiles/pico900.dir/pico900.c.obj
  .text.wait_for_power_on
-                0x100003a8       0x34 CMakeFiles/pico900.dir/pico900.c.obj
+                0x100003a4       0x34 CMakeFiles/pico900.dir/pico900.c.obj
  .text.check_address.part.0
-                0x100003dc       0x10 CMakeFiles/pico900.dir/pico900.c.obj
+                0x100003d8       0x10 CMakeFiles/pico900.dir/pico900.c.obj
  .text.get_pts_ch
-                0x100003ec       0xa0 CMakeFiles/pico900.dir/pico900.c.obj
+                0x100003e8       0xb0 CMakeFiles/pico900.dir/pico900.c.obj
  .text.put_pts_ch
-                0x1000048c       0xa0 CMakeFiles/pico900.dir/pico900.c.obj
+                0x10000498       0xb0 CMakeFiles/pico900.dir/pico900.c.obj
  .text.e920m_emulation
-                0x1000052c      0x4d4 CMakeFiles/pico900.dir/pico900.c.obj
+                0x10000548      0x4d8 CMakeFiles/pico900.dir/pico900.c.obj
  .text.startup.main
-                0x10000a00       0x84 CMakeFiles/pico900.dir/pico900.c.obj
-                0x10000a00                main
+                0x10000a20       0x88 CMakeFiles/pico900.dir/pico900.c.obj
+                0x10000a20                main
  .text.gpio_set_function
-                0x10000a84       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000a84                gpio_set_function
+                0x10000aa8       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000aa8                gpio_set_function
  .text.gpio_set_pulls
-                0x10000ab4       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000ab4                gpio_set_pulls
+                0x10000ad8       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000ad8                gpio_set_pulls
  .text.gpio_init_mask
-                0x10000ae8       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000ae8                gpio_init_mask
- .text.hw_claim_or_assert
-                0x10000b50       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000b50                hw_claim_or_assert
+                0x10000b0c       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000b0c                gpio_init_mask
  .text.running_on_fpga
-                0x10000b94       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000b94                running_on_fpga
+                0x10000b74       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000b74                running_on_fpga
+ .text.hw_claim_or_assert
+                0x10000b84       0x44 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000b84                hw_claim_or_assert
  .text.spin_locks_reset
-                0x10000ba4       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000ba4                spin_locks_reset
+                0x10000bc8       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000bc8                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000bc0       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000bc0                next_striped_spin_lock_num
+                0x10000be4       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000be4                next_striped_spin_lock_num
  .text.irq_set_enabled
-                0x10000bd8       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000bd8                irq_set_enabled
+                0x10000bfc       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000bfc                irq_set_enabled
  .text.irq_is_enabled
-                0x10000bfc       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000bfc                irq_is_enabled
+                0x10000c20       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000c20                irq_is_enabled
  .text.irq_get_vtable_handler
-                0x10000c14       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000c14                irq_get_vtable_handler
+                0x10000c38       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000c38                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000c24       0x54 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000c24                irq_set_exclusive_handler
+                0x10000c48       0x54 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000c48                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x10000c78      0x1b4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000c78                irq_remove_handler
+                0x10000c9c      0x1b4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000c9c                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000e2c       0xb4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e2c                irq_add_tail_to_free_list
+                0x10000e50       0xb4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e50                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10000ee0       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000ee0                irq_init_priorities
+                0x10000f04       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f04                irq_init_priorities
  .text.lock_init
-                0x10000f04       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x10000f04                lock_init
- .text.timer_pool_entry_comparator
-                0x10000f14       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000f14                timer_pool_entry_comparator
- .text.sleep_until_callback
-                0x10000f48       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.add_alarm_under_lock
-                0x10000f78      0x120 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.alarm_pool_alarm_callback
-                0x10001098      0x1dc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.alarm_pool_init_default
-                0x10001274       0x64 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001274                alarm_pool_init_default
- .text.sleep_until
-                0x100012d8      0x1ec CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100012d8                sleep_until
- .text.sleep_us
-                0x100014c4       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100014c4                sleep_us
- .text.sleep_ms
-                0x100014f4       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100014f4                sleep_ms
- .text.hardware_alarm_irq_handler
-                0x1000152c       0xb0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .text.hardware_alarm_claim
-                0x100015dc       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100015dc                hardware_alarm_claim
- .text.time_us_64
-                0x100015f4       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100015f4                time_us_64
- .text.busy_wait_until
-                0x1000160c       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000160c                busy_wait_until
- .text.hardware_alarm_set_callback
-                0x1000162c       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000162c                hardware_alarm_set_callback
- .text.hardware_alarm_set_target
-                0x100016b8       0xd8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100016b8                hardware_alarm_set_target
- .text.hardware_alarm_cancel
-                0x10001790       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001790                hardware_alarm_cancel
- .text.ph_merge_two_pass.part.3
-                0x100017d0       0xcc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .text.ph_post_alloc_init
-                0x1000189c       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000189c                ph_post_alloc_init
- .text.ph_remove_head
-                0x100018d8      0x158 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100018d8                ph_remove_head
- .text.ph_remove_and_free_node
-                0x10001a30      0x340 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001a30                ph_remove_and_free_node
+                0x10000f28       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x10000f28                lock_init
  .text.mutex_init
-                0x10001d70       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10001d70                mutex_init
+                0x10000f38       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10000f38                mutex_init
  .text.recursive_mutex_init
-                0x10001d8c       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10001d8c                recursive_mutex_init
+                0x10000f54       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10000f54                recursive_mutex_init
+ .text.timer_pool_entry_comparator
+                0x10000f70       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000f70                timer_pool_entry_comparator
+ .text.sleep_until_callback
+                0x10000fa4       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.add_alarm_under_lock
+                0x10000fd4      0x120 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.alarm_pool_alarm_callback
+                0x100010f4      0x1bc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .text.alarm_pool_init_default
+                0x100012b0       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100012b0                alarm_pool_init_default
+ .text.sleep_until
+                0x1000131c      0x1f0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000131c                sleep_until
+ .text.sleep_us
+                0x1000150c       0x24 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000150c                sleep_us
+ .text.sleep_ms
+                0x10001530       0x34 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001530                sleep_ms
+ .text.best_effort_wfe_or_timeout
+                0x10001564      0x200 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001564                best_effort_wfe_or_timeout
+ .text.hardware_alarm_irq_handler
+                0x10001764       0xb4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .text.hardware_alarm_claim
+                0x10001818       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001818                hardware_alarm_claim
+ .text.time_us_64
+                0x10001830       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001830                time_us_64
+ .text.busy_wait_us
+                0x10001848       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001848                busy_wait_us
+ .text.busy_wait_until
+                0x100018a8       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100018a8                busy_wait_until
+ .text.hardware_alarm_set_callback
+                0x100018c8       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100018c8                hardware_alarm_set_callback
+ .text.hardware_alarm_set_target
+                0x10001954       0xd8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001954                hardware_alarm_set_target
+ .text.hardware_alarm_cancel
+                0x10001a2c       0x40 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001a2c                hardware_alarm_cancel
+ .text.ph_merge_two_pass.part.3
+                0x10001a6c       0xcc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .text.ph_post_alloc_init
+                0x10001b38       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001b38                ph_post_alloc_init
+ .text.ph_remove_head
+                0x10001b74      0x154 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001b74                ph_remove_head
+ .text.ph_remove_and_free_node
+                0x10001cc8      0x2f8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001cc8                ph_remove_and_free_node
  .text.uart_init
-                0x10001da8       0xe8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x10001da8                uart_init
- .text.runtime_init
-                0x10001e90       0xf4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001e90                runtime_init
- .text.exit     0x10001f84        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001f84                exit
- .text.panic    0x10001f88       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001f88                panic
- .text.hard_assertion_failure
-                0x10001fb8        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001fb8                hard_assertion_failure
+                0x10001fc0      0x184 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x10001fc0                uart_init
  .text.clocks_init
-                0x10001fc4      0x2c8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001fc4                clocks_init
+                0x10002144      0x2dc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002144                clocks_init
  .text.clock_get_hz
-                0x1000228c        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x1000228c                clock_get_hz
+                0x10002420        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002420                clock_get_hz
  .text.pll_init
-                0x10002298       0xa8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x10002298                pll_init
+                0x1000242c       0xa0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x1000242c                pll_init
  .text.watchdog_start_tick
-                0x10002340       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10002340                watchdog_start_tick
+                0x100024cc       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100024cc                watchdog_start_tick
  .text.xosc_init
-                0x10002350       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002350                xosc_init
+                0x100024dc       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x100024dc                xosc_init
+ .text.runtime_init
+                0x10002504       0xf4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002504                runtime_init
+ .text._exit    0x100025f8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100025f8                _exit
+ .text.exit     0x100025fc        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100025fc                exit
+ .text.panic    0x10002604       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002604                panic
+ .text.hard_assertion_failure
+                0x10002634        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002634                hard_assertion_failure
  .text._out_null
-                0x10002378        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002640        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x1000237c       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002644       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x1000238c        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002654        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x10002398      0x270 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002660      0x270 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._etoa.part.0
-                0x10002608      0x56c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10002b74      0x6f8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028d0      0x56c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10002e3c      0x6f8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ftoa.part.1
-                0x1000326c      0x54c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003534      0x54c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x100037b8     0x11e0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003a80     0x11e0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x10004998       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10004998                vfctprintf
+                0x10004c60       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10004c60                vfctprintf
  .text.weak_raw_vprintf
-                0x100049b8       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x100049b8                weak_raw_vprintf
- .text          0x100049e8       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10004c80       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10004c80                weak_raw_vprintf
+ .text          0x10004cb0       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x100049f8       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100049f8                rom_func_lookup
+                0x10004cc0       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10004cc0                rom_func_lookup
  .text.rom_data_lookup
-                0x10004a08       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10004a08                rom_data_lookup
+                0x10004cd0       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10004cd0                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10004a18       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10004a18                rom_funcs_lookup
+                0x10004ce0       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10004ce0                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x10004a54       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10004a54                __wrap___aeabi_idivmod
-                0x10004a54                divmod_s32s32
-                0x10004a54                div_s32s32
-                0x10004a54                __wrap___aeabi_idiv
-                0x10004a5c                divmod_s32s32_unsafe
-                0x10004a88                divmod_s32s32_savestate
+                0x10004d1c       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10004d1c                __wrap___aeabi_idivmod
+                0x10004d1c                divmod_s32s32
+                0x10004d1c                div_s32s32
+                0x10004d1c                __wrap___aeabi_idiv
+                0x10004d24                divmod_s32s32_unsafe
+                0x10004d50                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10004aa4       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10004aa4                __wrap___aeabi_uidiv
-                0x10004aa4                __wrap___aeabi_uidivmod
-                0x10004aa4                div_u32u32
-                0x10004aa4                divmod_u32u32
-                0x10004aac                divmod_u32u32_unsafe
-                0x10004ad4                divmod_u32u32_savestate
+                0x10004d6c       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10004d6c                __wrap___aeabi_uidiv
+                0x10004d6c                __wrap___aeabi_uidivmod
+                0x10004d6c                div_u32u32
+                0x10004d6c                divmod_u32u32
+                0x10004d74                divmod_u32u32_unsafe
+                0x10004d9c                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10004af0      0x434 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10004af0                div_s64s64
-                0x10004af0                divmod_s64s64
-                0x10004af0                __wrap___aeabi_ldivmod
-                0x10004b28                div_u64u64
-                0x10004b28                divmod_u64u64
-                0x10004b28                __wrap___aeabi_uldivmod
-                0x10004b38                divmod_u64u64_savestate
-                0x10004b60                divmod_s64s64_unsafe
-                0x10004be8                divmod_u64u64_unsafe
+                0x10004db8      0x424 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10004db8                div_s64s64
+                0x10004db8                divmod_s64s64
+                0x10004db8                __wrap___aeabi_ldivmod
+                0x10004de8                div_u64u64
+                0x10004de8                divmod_u64u64
+                0x10004de8                __wrap___aeabi_uldivmod
+                0x10004df8                divmod_u64u64_savestate
+                0x10004e18                divmod_s64s64_unsafe
+                0x10004ea0                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10004f24       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004f24                __wrap___aeabi_drsub
-                0x10004f2a                __wrap___aeabi_dsub
-                0x10004f3c                __wrap___aeabi_dadd
-                0x10004f4e                __wrap___aeabi_ddiv
-                0x10004f8a                __wrap___aeabi_dmul
+                0x100051dc       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100051dc                __wrap___aeabi_drsub
+                0x100051e2                __wrap___aeabi_dsub
+                0x100051f4                __wrap___aeabi_dadd
+                0x10005206                __wrap___aeabi_ddiv
+                0x10005242                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10004fa4       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004fa4                __wrap___aeabi_cdrcmple
-                0x10004fb4                __wrap___aeabi_cdcmple
-                0x10004fb4                __wrap___aeabi_cdcmpeq
+                0x1000525c       0x6c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000525c                __wrap___aeabi_cdrcmple
+                0x1000526c                __wrap___aeabi_cdcmple
+                0x1000526c                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x10005010        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10005010                __wrap___aeabi_dcmplt
+                0x100052c8        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100052c8                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x1000501c       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000501c                __wrap___aeabi_dcmpge
+                0x100052d4       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100052d4                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x1000502c        0xa CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000502c                __wrap___aeabi_dcmpgt
+                0x100052e4        0xa CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100052e4                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10005036       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10005036                __wrap___aeabi_dcmpun
- *fill*         0x10005052        0x2 
+                0x100052ee       0x1c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100052ee                __wrap___aeabi_dcmpun
+ *fill*         0x1000530a        0x2 
  .text.__wrap___aeabi_i2d
-                0x10005054       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10005054                __wrap___aeabi_ui2d
-                0x1000505c                __wrap___aeabi_i2d
+                0x1000530c       0x38 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000530c                __wrap___aeabi_ui2d
+                0x10005314                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x1000508c       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000508c                __wrap___aeabi_d2iz
-                0x1000508c                double2int_z
+                0x10005344       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10005344                __wrap___aeabi_d2iz
+                0x10005344                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x100050d4       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100050d4                double2uint
-                0x100050d4                __wrap___aeabi_d2uiz
+                0x1000538c       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000538c                double2uint
+                0x1000538c                __wrap___aeabi_d2uiz
  .text.__aeabi_double_init
-                0x100050ec       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x100050ec                __aeabi_double_init
+                0x100053a4       0x60 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x100053a4                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x1000514c       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000514c                double_table_shim_on_use_helper
+                0x10005404       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10005404                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x10005178       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10005178                drsub_shim
-                0x1000517e                dsub_shim
+                0x10005430       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10005430                drsub_shim
+                0x10005436                dsub_shim
  .text.dadd_shim
-                0x10005188      0x15c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10005188                dadd_shim
+                0x10005440      0x15c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10005440                dadd_shim
  .text.dmul_shim
-                0x100052e4      0x15c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100052e4                dmul_shim
+                0x1000559c      0x15c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000559c                dmul_shim
  .text.ddiv_shim
-                0x10005440      0x1b0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10005440                ddiv_shim
+                0x100056f8      0x1b0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100056f8                ddiv_shim
  .text.double2uint_shim
-                0x100055f0        0xe CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100055f0                double2uint_shim
-                0x100055f2                double2ufix_shim
- *fill*         0x100055fe        0x2 
+                0x100058a8        0xe CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100058a8                double2uint_shim
+                0x100058aa                double2ufix_shim
+ *fill*         0x100058b6        0x2 
  .text.double2uint64_shim
-                0x10005600       0x70 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10005600                double2uint64_shim
-                0x10005602                double2ufix64_shim
-                0x10005622                d2fix_a
+                0x100058b8       0x70 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100058b8                double2uint64_shim
+                0x100058ba                double2ufix64_shim
+                0x100058da                d2fix_a
  .text.dunpacks
-                0x10005670       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10005670                dunpacks
+                0x10005928       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10005928                dunpacks
  .text.__aeabi_lmul
-                0x100056ac       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x100056ac                __wrap___aeabi_lmul
- *fill*         0x100056de        0x2 
+                0x10005964       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x10005964                __wrap___aeabi_lmul
+ *fill*         0x10005996        0x2 
  .text.__aeabi_float_init
-                0x100056e0       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x100056e0                __aeabi_float_init
+                0x10005998       0x68 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10005998                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10005748       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10005748                float_table_shim_on_use_helper
- .text          0x10005774       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10005774                __aeabi_mem_init
- .text.memset   0x10005784        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10005784                __wrap_memset
- .text.memcpy   0x10005790        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10005790                __wrap___aeabi_memcpy
-                0x10005790                __wrap_memcpy
+                0x10005a00       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10005a00                float_table_shim_on_use_helper
+ .text          0x10005a2c       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10005a2c                __aeabi_mem_init
+ .text.memcpy   0x10005a3c        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10005a3c                __wrap___aeabi_memcpy
+                0x10005a3c                __wrap_memcpy
  .text.stdio_out_chars_crlf
-                0x1000579c       0x9c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005a48       0x9c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_stack_buffer_flush.part.1
-                0x10005838       0xdc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005ae4       0xdc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x10005914       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005bc0       0x20 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10005934       0xa0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005934                __wrap_putchar
+                0x10005be0       0x94 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005be0                __wrap_putchar
  .text.__wrap_puts
-                0x100059d4       0xe8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100059d4                __wrap_puts
+                0x10005c74       0xdc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005c74                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x10005abc       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005abc                stdio_set_driver_enabled
+                0x10005d50       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005d50                stdio_set_driver_enabled
  .text.__wrap_vprintf
-                0x10005aec       0x94 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005aec                __wrap_vprintf
+                0x10005d80       0x8c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005d80                __wrap_vprintf
  .text.__wrap_printf
-                0x10005b80       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005b80                __wrap_printf
+                0x10005e0c       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005e0c                __wrap_printf
  .text.stdio_init_all
-                0x10005b98        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005b98                stdio_init_all
+                0x10005e24        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005e24                stdio_init_all
  .text.stdio_uart_out_chars
-                0x10005ba0       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005e30       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_in_chars
-                0x10005bec       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10005bec                stdio_uart_in_chars
+                0x10005e7c       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005e7c                stdio_uart_in_chars
+ .text.on_uart_rx
+                0x10005efc       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .text.stdio_uart_set_chars_available_callback
+                0x10005f24       0x84 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_init
-                0x10005c28       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10005c28                stdio_uart_init
+                0x10005fa8       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005fa8                stdio_uart_init
  .text.core1_trampoline
-                0x10005c70        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10005ff0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.core1_wrapper
-                0x10005c74        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-                0x10005c74                core1_wrapper
+                0x10005ff4        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10005ff4                core1_wrapper
+ .text.multicore_launch_core1_raw
+                0x10006000       0x80 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10006000                multicore_launch_core1_raw
  .text.multicore_launch_core1
-                0x10005c80       0xc0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-                0x10005c80                multicore_launch_core1
- .text          0x10005d40       0x34 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-setjmp.o)
-                0x10005d40                setjmp
-                0x10005d58                longjmp
- .text          0x10005d74       0x64 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strlen-stub.o)
-                0x10005d74                strlen
+                0x10006080       0x4c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10006080                multicore_launch_core1
+ .text          0x100060cc       0x34 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-setjmp.o)
+                0x100060cc                setjmp
+                0x100060e4                longjmp
+ .text          0x10006100       0x64 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strlen-stub.o)
+                0x10006100                strlen
  *(.fini)
- .fini          0x10005dd8        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
-                0x10005dd8                _fini
- *fill*         0x10005ddc        0x4 
- .fini.__stub   0x10005de0       0x70 linker stubs
+ .fini          0x10006164        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
+                0x10006164                _fini
+ .fini.__stub   0x10006168       0x60 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1677,122 +1726,121 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10005e50        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
-                0x10005e50                . = ALIGN (0x4)
+ .eh_frame      0x100061c8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x100061c8                . = ALIGN (0x4)
 
-.glue_7         0x10005e50        0x0
- .glue_7        0x10005e50        0x0 linker stubs
+.glue_7         0x100061c8        0x0
+ .glue_7        0x100061c8        0x0 linker stubs
 
-.glue_7t        0x10005e50        0x0
- .glue_7t       0x10005e50        0x0 linker stubs
+.glue_7t        0x100061c8        0x0
+ .glue_7t       0x100061c8        0x0 linker stubs
 
-.vfp11_veneer   0x10005e50        0x0
- .vfp11_veneer  0x10005e50        0x0 linker stubs
+.vfp11_veneer   0x100061c8        0x0
+ .vfp11_veneer  0x100061c8        0x0 linker stubs
 
-.v4_bx          0x10005e50        0x0
- .v4_bx         0x10005e50        0x0 linker stubs
+.v4_bx          0x100061c8        0x0
+ .v4_bx         0x100061c8        0x0 linker stubs
 
-.iplt           0x10005e50        0x0
- .iplt          0x10005e50        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.iplt           0x100061c8        0x0
+ .iplt          0x100061c8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
-.rodata         0x10005e50      0x5d4
+.rodata         0x100061c8      0x5d4
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.e920m_emulation
-                0x10005e50       0x78 CMakeFiles/pico900.dir/pico900.c.obj
- .rodata.__bi_270.6358
-                0x10005ec8        0xc CMakeFiles/pico900.dir/pico900.c.obj
+                0x100061c8       0x78 CMakeFiles/pico900.dir/pico900.c.obj
+ .rodata.__bi_272.6393
+                0x10006240        0xc CMakeFiles/pico900.dir/pico900.c.obj
  .rodata.e920m_emulation.str1.4
-                0x10005ed4       0xdc CMakeFiles/pico900.dir/pico900.c.obj
+                0x1000624c       0xdc CMakeFiles/pico900.dir/pico900.c.obj
  .rodata.get_pts_ch.str1.4
-                0x10005fb0       0x5a CMakeFiles/pico900.dir/pico900.c.obj
- *fill*         0x1000600a        0x2 
+                0x10006328       0x5a CMakeFiles/pico900.dir/pico900.c.obj
+ *fill*         0x10006382        0x2 
  .rodata.put_pts_ch.str1.4
-                0x1000600c        0x7 CMakeFiles/pico900.dir/pico900.c.obj
- *fill*         0x10006013        0x1 
+                0x10006384        0x7 CMakeFiles/pico900.dir/pico900.c.obj
+ *fill*         0x1000638b        0x1 
  .rodata.str1.4
-                0x10006014       0x9a CMakeFiles/pico900.dir/pico900.c.obj
- *fill*         0x100060ae        0x2 
+                0x1000638c       0x9a CMakeFiles/pico900.dir/pico900.c.obj
+ *fill*         0x10006426        0x2 
  .rodata.wait_for_power_on.str1.4
-                0x100060b0       0x43 CMakeFiles/pico900.dir/pico900.c.obj
- *fill*         0x100060f3        0x1 
+                0x10006428       0x43 CMakeFiles/pico900.dir/pico900.c.obj
+ *fill*         0x1000646b        0x1 
  .rodata.hardware_alarm_claim.str1.4
-                0x100060f4       0x22 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x10006116        0x2 
+                0x1000646c       0x22 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x1000648e        0x2 
  .rodata.hard_assertion_failure.str1.4
-                0x10006118        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10006490        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.panic.str1.4
-                0x10006124       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000649c       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                  0x12 (size before relaxing)
  .rodata._vsnprintf
-                0x10006134      0x1e0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100064ac      0x1e0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata._etoa.part.0.str1.4
-                0x10006314        0x9 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x1000631d        0x3 
+                0x1000668c        0x9 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10006695        0x3 
  .rodata._ftoa.str1.4
-                0x10006320        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x1000632c        0x4 
+                0x10006698        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x100066a4        0x4 
  .rodata.pow10.5391
-                0x10006330       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100066a8       0x50 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.__bi_44
-                0x10006380        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100066f8        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x1000638c        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006704        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10006398        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006710        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.str1.4
-                0x100063a4       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.crlf_str.6007
-                0x100063e0        0x2 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x100063e2        0x2 
- .rodata.__bi_28.4819
-                0x100063e4        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_29.4823
-                0x100063f0        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1000671c       0x3c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.crlf_str.6181
+                0x10006758        0x2 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x1000675a        0x2 
+ .rodata.__bi_33.4836
+                0x1000675c        0xc CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .rodata.__bi_34.4840
+                0x10006768        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.str1.4
-                0x100063f8       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10006424                . = ALIGN (0x4)
+                0x10006770       0x2c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1000679c                . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x10006424                . = ALIGN (0x4)
-
-.rel.dyn        0x10006424        0x0
- .rel.iplt      0x10006424        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x1000679c                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10006424                __exidx_start = .
+                0x1000679c                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10006424                __exidx_end = .
-                0x10006424                . = ALIGN (0x4)
-                0x10006424                __binary_info_start = .
+                0x1000679c                __exidx_end = .
+                0x1000679c                . = ALIGN (0x4)
+                0x1000679c                __binary_info_start = .
 
-.binary_info    0x10006424       0x28
+.binary_info    0x1000679c       0x28
  *(.binary_info.keep.*)
- .binary_info.keep.__bi_ptr270
-                0x10006424        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+ .binary_info.keep.__bi_ptr272
+                0x1000679c        0x4 CMakeFiles/pico900.dir/pico900.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10006428        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067a0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x1000642c        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067a4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10006430        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067a8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10006434        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067ac        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10006438        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067b0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x1000643c        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067b4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr81
-                0x10006440        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100067b8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
- .binary_info.__bi_ptr28
-                0x10006444        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr29
-                0x10006448        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x1000644c                __binary_info_end = .
-                0x1000644c                . = ALIGN (0x4)
-                0x1000644c                __etext = .
+ .binary_info.__bi_ptr33
+                0x100067bc        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .binary_info.__bi_ptr34
+                0x100067c0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100067c4                __binary_info_end = .
+
+.rel.dyn        0x100067c4        0x0
+ .rel.iplt      0x100067c4        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x100067c4                . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -1801,187 +1849,191 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
                 0x20000000       0xc0 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0x1c8 load address 0x1000644c
+.data           0x200000c0      0x1ec load address 0x100067c4
                 0x200000c0                __data_start__ = .
  *(vtable)
  *(.time_critical*)
- .time_critical.mutex_enter_blocking
-                0x200000c0       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x200000c0                mutex_enter_blocking
- .time_critical.mutex_try_enter
-                0x20000108       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x20000108                mutex_try_enter
+ .time_critical.mutex_try_enter_block_until
+                0x200000c0       0x9c CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x200000c0                mutex_try_enter_block_until
  .time_critical.mutex_exit
-                0x20000150       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x20000150                mutex_exit
+                0x2000015c       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x2000015c                mutex_exit
  *(.text*)
- .text          0x20000178        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
-                0x20000178                __aeabi_ldiv0
-                0x20000178                __aeabi_idiv0
- .text          0x2000017c       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_lshrdi3.o)
-                0x2000017c                __aeabi_llsr
-                0x2000017c                __lshrdi3
- .text          0x20000194       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_ashldi3.o)
-                0x20000194                __ashldi3
-                0x20000194                __aeabi_llsl
-                0x200001ac                . = ALIGN (0x4)
+ .text          0x20000184        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
+                0x20000184                __aeabi_ldiv0
+                0x20000184                __aeabi_idiv0
+ .text          0x20000188       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_lshrdi3.o)
+                0x20000188                __aeabi_llsr
+                0x20000188                __lshrdi3
+ .text          0x200001a0       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_ashldi3.o)
+                0x200001a0                __ashldi3
+                0x200001a0                __aeabi_llsl
+ .text.__stub   0x200001b8       0x10 linker stubs
+                0x200001c8                . = ALIGN (0x4)
  *(.rodata*)
-                0x200001ac                . = ALIGN (0x4)
+                0x200001c8                . = ALIGN (0x4)
  *(.data*)
  .data.error_messages
-                0x200001ac       0x10 CMakeFiles/pico900.dir/pico900.c.obj
-                0x200001ac                error_messages
+                0x200001c8       0x10 CMakeFiles/pico900.dir/pico900.c.obj
+                0x200001c8                error_messages
  .data.striped_spin_lock_num
-                0x200001bc        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x200001bd        0x3 
- .data          0x200001c0       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-                0x200001c0                irq_handler_chain_slots
-                0x200001f0                irq_handler_chain_first_slot
-                0x200001fa                irq_handler_chain_remove_tail
+                0x200001d8        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x200001d9        0x3 
+ .data          0x200001dc       0x48 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+                0x200001dc                irq_handler_chain_slots
+                0x2000020c                irq_handler_chain_first_slot
+                0x20000216                irq_handler_chain_remove_tail
  .data.default_alarm_pool
-                0x20000208       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x20000224       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .data.default_alarm_pool_heap
-                0x20000220       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x2000023c       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x2000024c        0x4 
  .data.aeabi_bits_funcs
-                0x20000230       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-                0x20000230                aeabi_bits_funcs
-                0x20000240                aeabi_bits_funcs_end
+                0x20000250       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x20000250                aeabi_bits_funcs
+                0x20000260                aeabi_bits_funcs_end
  .data.aeabi_mem_funcs
-                0x20000240       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x20000240                aeabi_mem_funcs
-                0x20000250                aeabi_mem_funcs_end
+                0x20000260       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000260                aeabi_mem_funcs
+                0x20000270                aeabi_mem_funcs_end
  .data.stdio_uart
-                0x20000250       0x14 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x20000250                stdio_uart
-                0x20000264                . = ALIGN (0x4)
+                0x20000270       0x18 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x20000270                stdio_uart
+                0x20000288                . = ALIGN (0x4)
  *(.after_data.*)
-                0x20000264                . = ALIGN (0x4)
-                0x20000264                PROVIDE (__mutex_array_start = .)
+                0x20000288                . = ALIGN (0x4)
+                0x20000288                PROVIDE (__mutex_array_start = .)
  *(SORT_BY_NAME(.mutex_array.*))
  *(.mutex_array)
- .mutex_array   0x20000264        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .mutex_array   0x2000026c        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x20000274                PROVIDE (__mutex_array_end = .)
-                0x20000274                . = ALIGN (0x4)
-                0x20000274                PROVIDE (__preinit_array_start = .)
+ .mutex_array   0x20000288        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .mutex_array   0x20000290        0x8 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20000298                PROVIDE (__mutex_array_end = .)
+                0x20000298                . = ALIGN (0x4)
+                0x20000298                PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00001
-                0x20000274        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000298        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .preinit_array.00010
-                0x20000278        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x2000029c        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .preinit_array.00020
-                0x2000027c        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x200002a0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .preinit_array.00020
-                0x20000280        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x200002a4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  *(.preinit_array)
-                0x20000284                PROVIDE (__preinit_array_end = .)
-                0x20000284                . = ALIGN (0x4)
-                0x20000284                PROVIDE (__init_array_start = .)
+                0x200002a8                PROVIDE (__preinit_array_end = .)
+                0x200002a8                . = ALIGN (0x4)
+                0x200002a8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x20000284        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
-                0x20000288                PROVIDE (__init_array_end = .)
-                0x20000288                . = ALIGN (0x4)
-                0x20000288                PROVIDE (__fini_array_start = .)
+ .init_array    0x200002a8        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x200002ac                PROVIDE (__init_array_end = .)
+                0x200002ac                . = ALIGN (0x4)
+                0x200002ac                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
-                0x20000288                PROVIDE (__fini_array_end = .)
+                0x200002ac                PROVIDE (__fini_array_end = .)
  *(.jcr)
-                0x20000288                . = ALIGN (0x4)
-                0x20000288                __data_end__ = .
+                0x200002ac                . = ALIGN (0x4)
+                0x200002ac                __data_end__ = .
+                0x100067c4                __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20000288        0x0 load address 0x10006614
+                0x200002ac        0x0 load address 0x100069b0
  .tm_clone_table
-                0x20000288        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x200002ac        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
  .tm_clone_table
-                0x20000288        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtend.o
+                0x200002ac        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtend.o
 
-.igot.plt       0x20000288        0x0 load address 0x10006614
- .igot.plt      0x20000288        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.igot.plt       0x200002ac        0x0 load address 0x100069b0
+ .igot.plt      0x200002ac        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
 .uninitialized_data
-                0x20000288        0x0 load address 0x10006614
-                0x20000288                . = ALIGN (0x4)
+                0x200002ac        0x0 load address 0x100069b0
+                0x200002ac                . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10006614
+.scratch_x      0x20040000        0x0 load address 0x100069b0
                 0x20040000                __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                . = ALIGN (0x4)
                 0x20040000                __scratch_x_end__ = .
-                0x10006614                __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x100069b0                __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10006614
+.scratch_y      0x20041000        0x0 load address 0x100069b0
                 0x20041000                __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                . = ALIGN (0x4)
                 0x20041000                __scratch_y_end__ = .
-                0x10006614                __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x100069b0                __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20000288     0x8440
-                0x20000288                . = ALIGN (0x4)
-                0x20000288                __bss_start__ = .
+.bss            0x200002b0     0x8448
+                0x200002b0                . = ALIGN (0x4)
+                0x200002b0                __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
  .bss.default_alarm_pool_entries
-                0x20000288      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .bss           0x20000388       0x1c /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x200002b0      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .bss           0x200003b0       0x1c /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
  .bss.alarm_callbacks
-                0x200003a4       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .bss.blink     0x200003b4        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+                0x200003cc       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.blink     0x200003dc        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+ .bss.chars_available_callback
+                0x200003e0        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.chars_available_param
+                0x200003e4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.configured_freq
-                0x200003b8       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x200003e8       0x28 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss.default_alarm_pool_entry_ids_high
-                0x200003e0       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x20000410       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x200003f0       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
- .bss.drivers   0x20000420        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .bss.filter    0x20000424        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20000420       0x30 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.drivers   0x20000450        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .bss.filter    0x20000454        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.in_pins_mask
-                0x20000428        0x4 CMakeFiles/pico900.dir/pico900.c.obj
-                0x20000428                in_pins_mask
- .bss.jbuf      0x2000042c       0x5c CMakeFiles/pico900.dir/pico900.c.obj
+                0x20000458        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+                0x20000458                in_pins_mask
+ .bss.jbuf      0x2000045c       0x5c CMakeFiles/pico900.dir/pico900.c.obj
  .bss.lazy_vsnprintf
-                0x20000488        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .bss.led_state.6472
-                0x2000048c        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+                0x200004b8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .bss.led_state.6507
+                0x200004bc        0x4 CMakeFiles/pico900.dir/pico900.c.obj
  .bss.out_pins_mask
-                0x20000490        0x4 CMakeFiles/pico900.dir/pico900.c.obj
-                0x20000490                out_pins_mask
- .bss.pools     0x20000494       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x200004c0        0x4 CMakeFiles/pico900.dir/pico900.c.obj
+                0x200004c0                out_pins_mask
+ .bss.pools     0x200004c4       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.sf_clz_func
-                0x200004a4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200004a4                sf_clz_func
+                0x200004d4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200004d4                sf_clz_func
  .bss.sleep_notifier
-                0x200004a8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x200004d8        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.target_hi
-                0x200004ac       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x200004dc       0x10 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.uart_instance
-                0x200004bc        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.claimed   0x200004c0        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x200004ec        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.claimed   0x200004f0        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x200004c1        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x200004f1        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.timer_callbacks_pending
-                0x200004c2        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x200004f2        0x1 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  *(COMMON)
- *fill*         0x200004c3        0x1 
- COMMON         0x200004c4     0x8000 CMakeFiles/pico900.dir/pico900.c.obj
-                0x200004c4                store
- COMMON         0x200084c4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x200084c4                uart_char_to_line_feed
- COMMON         0x200084c8      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200084c8                sd_table
- COMMON         0x200085c8      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x200085c8                sf_table
-                0x200086c8                . = ALIGN (0x4)
-                0x200086c8                __bss_end__ = .
+ *fill*         0x200004f3        0x1 
+ COMMON         0x200004f4     0x8000 CMakeFiles/pico900.dir/pico900.c.obj
+                0x200004f4                store
+ COMMON         0x200084f4        0x4 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x200084f4                uart_char_to_line_feed
+ COMMON         0x200084f8      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200084f8                sd_table
+ COMMON         0x200085f8      0x100 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x200085f8                sf_table
+                0x200086f8                . = ALIGN (0x4)
+                0x200086f8                __bss_end__ = .
 
-.heap           0x200086c8      0x800
-                0x200086c8                __end__ = .
-                0x200086c8                end = __end__
+.heap           0x200086f8      0x800
+                0x200086f8                __end__ = .
+                0x200086f8                end = __end__
  *(.heap*)
- .heap          0x200086c8      0x800 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20008ec8                __HeapLimit = .
+ .heap          0x200086f8      0x800 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20008ef8                __HeapLimit = .
 
 .stack1_dummy   0x20040000      0x800
  *(.stack1*)
@@ -1991,8 +2043,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10006614        0x0
-                0x10006614                __flash_binary_end = .
+.flash_end      0x100069b0        0x0
+                0x100069b0                PROVIDE (__flash_binary_end = .)
                 0x20040000                __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2004,29 +2056,29 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
 LOAD CMakeFiles/pico900.dir/pico900.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/sem.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/datetime.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/queue.c.obj
-LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
@@ -2048,7 +2100,7 @@ LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_sta
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 LOAD CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-LOAD /tmp/ccGV3Bql.o
+LOAD /tmp/ccAPnzEQ.o
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libm.a
 START GROUP
@@ -2075,9 +2127,9 @@ OUTPUT(pico900.elf elf32-littlearm)
  .ARM.attributes
                 0x0000007c       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .ARM.attributes
-                0x000000ae       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x000000ae       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .ARM.attributes
-                0x000000e0       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x000000e0       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .ARM.attributes
                 0x00000112       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .ARM.attributes
@@ -2087,25 +2139,25 @@ OUTPUT(pico900.elf elf32-littlearm)
  .ARM.attributes
                 0x00000198       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .ARM.attributes
-                0x000001ca       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x000001ca       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .ARM.attributes
-                0x000001fc       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x000001fc       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .ARM.attributes
-                0x0000022e       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000022e       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .ARM.attributes
-                0x00000260       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x00000260       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .ARM.attributes
                 0x00000292       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .ARM.attributes
-                0x000002c4       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x000002c4       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .ARM.attributes
-                0x000002f6       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x000002f6       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .ARM.attributes
-                0x00000328       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x00000328       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .ARM.attributes
-                0x0000035a       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x0000035a       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .ARM.attributes
-                0x0000038c       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x0000038c       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .ARM.attributes
                 0x000003be       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .ARM.attributes
@@ -2143,7 +2195,7 @@ OUTPUT(pico900.elf elf32-littlearm)
  .ARM.attributes
                 0x00000680       0x32 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .ARM.attributes
-                0x000006b2       0x22 /tmp/ccGV3Bql.o
+                0x000006b2       0x22 /tmp/ccAPnzEQ.o
  .ARM.attributes
                 0x000006d4       0x1e /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -2162,21 +2214,21 @@ OUTPUT(pico900.elf elf32-littlearm)
                                  0x58 (size before relaxing)
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/pico900.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_time/time.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .comment       0x00000057       0x58 CMakeFiles/pico900.dir/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
