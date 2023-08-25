@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 08/08/2023
+// Copyright (c) Andrew Herbert - 23/08/2023
 
 // MIT Licence.
 
@@ -142,11 +142,11 @@
 #define TTYSEL_PIN  21 // Pico sets HIGH to request reader input and awaits ACK
 #define PUNREQ_PIN  22 // Pico sets HIGH to request punch output and awiats ACK
 // There is no GPIO23, GPIO24
-#define LED_PIN     25 // onboard LED    
+// GPIO 25 is onboard LED    
 #define RDRREQ_PIN  26 // Pico sets HIGH to select teleprinter,
                        // LOW for paper tape
 #define LOG_PIN     27 // set HIGH to enable logging
-// GPIO28 spare
+#define LED_PIN     28 // external LED
 
 #define RDRREQ_BIT   (1 << RDRREQ_PIN)
 #define PUNREQ_BIT   (1 << PUNREQ_PIN)
@@ -274,6 +274,7 @@ int32_t main()
   stdio_init_all(); // initialise stdio
   setup_gpios();    // configure interface to outside world
   sleep_us(250);
+  printf("Hello!\n");
   multicore_launch_core1(blinker); // set LED blinker running
   e920m_emulation(); // run emulation
  }
@@ -313,10 +314,11 @@ static void e920m_emulation()
 	   : "Pico900 - Initial instructions selected");
   }
 
+   wait_for_power_on(); // -NOPOWER enables execution
+
+  if ( autostart() ) store[8177] = make_instruction(0,  8, 8177);
+
   if ( !autostart() ) load_initial_instructions();
-
-  wait_for_power_on(); // -NOPOWER from PTS signals start execution
-
   blink = SLOW_BLINK; // signal execution starting
 
   jump_to(autostart() ? 8177 : 8181); // start location depends on II_AUTO
@@ -630,7 +632,7 @@ static void put_pts_ch(const uint32_t ch, const uint32_t tty)
 /**********************************************************/
 
 
-/* Load initial instructions into sstore */
+/* Load initial instructions into store */
 
 static void load_initial_instructions()
 {
@@ -693,7 +695,7 @@ static inline uint32_t autostart()
 static inline uint32_t logging()
 {
   /* return gpio_get(LOG_PIN); */
-  return TRUE;
+  return gpio_get(LOG_PIN);
 }
 
 static inline uint32_t no_power() // TRUE if power not connected
@@ -706,13 +708,16 @@ static inline uint32_t no_power() // TRUE if power not connected
 static inline void wait_for_power_on()
 {
   if ( logging() ) printf("Pico900 - Waiting for NOPOWER LOW\n");
-  while ( TRUE ) { 
-    if ( !no_power() ) {
-      break;
-    } else {
-      sleep_ms(1);
+  while ( TRUE ) {
+    while ( no_power() ) sleep_ms(100); // wait for NOPOWER FALSE
+    sleep_ms(100); // debounce switch
+    if ( no_power() ) {
+      continue; // not stable yet
     }
-  }
+    else {
+      break; // stable
+	}
+  }  
   if ( logging() ) printf("Pico900 - NOPOWER LOW detected\n");
 }
 
@@ -720,12 +725,15 @@ static inline void wait_for_power_off()
 {
   if ( logging() ) printf("Pico900 - Waiting for NOPOWER HIGH\n");
   while ( TRUE ) { 
-    if ( no_power() ) {
-      break;
-    } else {
-      sleep_ms(1);
+    while ( !no_power() ) sleep_ms(100); // wait for NOPOWER TRUE
+    sleep_ms(100); // debounce switch
+    if ( !no_power() ) {
+      continue; // not stable yet
     }
-  }
+    else {
+      break; // stable
+	}
+  }  
   if ( logging() ) printf("Pico900 - NOPOWER HIGH detected\n");
 }
 
@@ -760,8 +768,7 @@ static inline void wait_for_no_ack()
 static inline void blinker()
 {
   static uint32_t led_state = 0;
-  if ( logging() )
-  while (TRUE)
+  while ( TRUE ){
     if ( blink == NO_BLINK ) {
       led_state = 0;
       gpio_put(LED_PIN, 0);
@@ -772,5 +779,6 @@ static inline void blinker()
       gpio_put(LED_PIN, led_state%2);
       sleep_ms(blink);
     }
+  }
 }
       
