@@ -1,5 +1,5 @@
 // Elliott 900 emulator for Raspberry Pi Pico
-// Copyright (c) Andrew Herbert - 23/08/2023
+// Copyright (c) Andrew Herbert - 26/08/2023
 
 // MIT Licence.
 
@@ -274,7 +274,6 @@ int32_t main()
   stdio_init_all(); // initialise stdio
   setup_gpios();    // configure interface to outside world
   sleep_us(250);
-  printf("Hello!\n");
   multicore_launch_core1(blinker); // set LED blinker running
   e920m_emulation(); // run emulation
  }
@@ -288,7 +287,7 @@ int32_t main()
 
 static void e920m_emulation()
 {
-  int32_t fail_code;
+  int32_t fail_code, start_address;
   
   // long jump to here on error
   if ( fail_code = setjmp(jbuf) ) { // test if a longjmp occurred
@@ -308,7 +307,7 @@ static void e920m_emulation()
   blink = NO_BLINK;
 
   if ( logging() ) {
-    printf("Pico900 - Starting\n%s\n",
+    printf("Pico900 - Initialising emulator\n%s\n",
 	   ( autostart() )
 	   ? "Pico900 - Autostart selected"
 	   : "Pico900 - Initial instructions selected");
@@ -316,12 +315,21 @@ static void e920m_emulation()
 
    wait_for_power_on(); // -NOPOWER enables execution
 
-  if ( autostart() ) store[8177] = make_instruction(0,  8, 8177);
-
-  if ( !autostart() ) load_initial_instructions();
+   if ( autostart() ) {
+     start_address = 8177;
+     store[8177] = make_instruction(0,  8, 8177);
+   } else {
+     start_address = 8181;
+      load_initial_instructions();
+   }
+   
   blink = SLOW_BLINK; // signal execution starting
 
-  jump_to(autostart() ? 8177 : 8181); // start location depends on II_AUTO
+  if ( logging() )
+    printf("Pico900 - Jumping to %d\n", start_address); 
+
+  jump_to(start_address);
+  
   /* NOT REACHED */
 }
 
