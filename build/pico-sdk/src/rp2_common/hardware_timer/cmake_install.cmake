@@ -1,4 +1,4 @@
-# Install script for directory: /home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_timer
+# Install script for directory: /Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/hardware_timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -30,5 +30,10 @@ endif()
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "TRUE")
+endif()
+
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/local/bin/arm-none-eabi-objdump")
 endif()
 

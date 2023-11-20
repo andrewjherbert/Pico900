@@ -310,9 +310,6 @@ int32_t main()
   led_on(); // show Pico is live
   sleep_us(250);    // give time for serial port to settle
 
-  if (logging() )
-    printf("Pico900 Starting\n");
-
   /* loopback_test(); */
   
   multicore_launch_core1(blinker); // set status LED blinker running

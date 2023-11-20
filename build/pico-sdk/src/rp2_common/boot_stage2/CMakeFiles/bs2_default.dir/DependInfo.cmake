@@ -1,10 +1,14 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "/home/ajh2/home/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/home/ajh2/home/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/Users/andrewherbert/Dropbox/pico/Pico900/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 
@@ -18,18 +22,22 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "/home/ajh2/home/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude"
-  "/home/ajh2/home/pico/pico-sdk/src/rp2040/hardware_regs/include"
-  "/home/ajh2/home/pico/pico-sdk/src/rp2_common/hardware_base/include"
-  "/home/ajh2/home/pico/pico-sdk/src/common/pico_base/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2040/hardware_regs/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/hardware_base/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/common/pico_base/include"
   "generated/pico_base"
-  "/home/ajh2/home/pico/pico-sdk/src/boards/include"
-  "/home/ajh2/home/pico/pico-sdk/src/rp2_common/pico_platform/include"
-  "/home/ajh2/home/pico/pico-sdk/src/rp2_common/boot_stage2/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/boards/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/pico_platform/include"
+  "/Users/andrewherbert/Dropbox/pico/pico-sdk/src/rp2_common/boot_stage2/include"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,4 +1,6 @@
 
+There are no discarded input sections
+
 Memory Configuration
 
 Name             Origin             Length             Attributes
@@ -7,7 +9,7 @@ SRAM             0x20041f00         0x000000fc         xr
 
 Linker script and memory map
 
-                0x20041f00                . = ORIGIN (SRAM)
+                0x20041f00                        . = ORIGIN (SRAM)
 
 .text           0x20041f00       0xf0
  *(.entry)
@@ -18,15 +20,16 @@ Linker script and memory map
                 0x20041fcc                literals
 LOAD CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a
+LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a
+LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libc.a
-LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a
+LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a
+LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a
+LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libnosys.a
 END GROUP
 OUTPUT(bs2_default.elf elf32-littlearm)
+LOAD linker stubs
 
 .data           0x20041ff0        0x0
  .data          0x20041ff0        0x0 CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
